@@ -36,7 +36,8 @@ public class Sittable : MonoBehaviour
 			StartCoroutine(SitCooldown());
 		}
 		sitting = true;
-		this.gameObject.transform.position = s.transform.position;
+		Vector3 pos = gameObject.transform.position;
+		this.gameObject.transform.position = new Vector3(s.transform.position.x, pos.y, pos.z);
 		animator.SetBool("IsSitting", true);
 		animator.SetFloat("XVelocity", 0);
 		return true;

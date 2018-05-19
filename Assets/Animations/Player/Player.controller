@@ -41,7 +41,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 0422dd70f20d03c46b4cb8d5b6c9b13e, type: 2}
+    m_Motion: {fileID: 7400000, guid: d0eee8554cc71144ea44d9ddd60dfc50, type: 2}
     m_Threshold: -1
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -57,7 +57,7 @@ BlendTree:
     m_DirectBlendParameter: XVelocity
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 0422dd70f20d03c46b4cb8d5b6c9b13e, type: 2}
+    m_Motion: {fileID: 7400000, guid: 70d2fa2c136235e4aa8ac6827c35f9b0, type: 2}
     m_Threshold: 1
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -125,8 +125,8 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Standing
-  m_Speed: 1
+  m_Name: Walking
+  m_Speed: 1.4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101987533111773964}

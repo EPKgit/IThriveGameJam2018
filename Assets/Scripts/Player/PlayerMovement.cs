@@ -8,6 +8,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
 	private Rigidbody2D rb;
 	private Animator animator;
+	private SpriteRenderer sprite;
 
 	private bool canMove;
 	public bool CanMove
@@ -29,6 +30,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
 		canMove = true;
 		base.EnforceSingleton();
 		rb = GetComponent<Rigidbody2D>();
+		sprite = GetComponent<SpriteRenderer>();
 		animator = GetComponent<Animator>();
 	}
 	
@@ -38,6 +40,10 @@ public class PlayerMovement : Singleton<PlayerMovement>
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 		rb.velocity = new Vector2(moveHorizontal * speed, 0);
 		animator.SetFloat("XVelocity", moveHorizontal);
+		if(moveHorizontal == -1)
+			sprite.flipX = true;
+		else
+			sprite.flipX = false;
 		//rb.AddForce(new Vector2(moveHorizontal * speed, 0));
 	}
 }

@@ -1,23 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Outcome  {
-/*
-	public Func<>[] actions;
-	public Func<bool>[] triggers;
-	public float startTime;
-	private float callTime;
-	private bool started;
-	private bool endEvent;
+public delegate void voidFunction();
+public delegate bool boolFunction();
 
-	Outcome(Func<>[] a, Func<bool>[] t, bool e)
+public class Outcome  {
+
+	public voidFunction[] actions;
+	public boolFunction[] triggers;
+	public float startTime;
+	protected float callTime;
+	protected bool started;
+	protected bool endEvent;
+
+	public Outcome(voidFunction[] a, boolFunction[] t, bool e)
 	{
 		actions = a;// Example: { Character c = eM.getCharacter(Person); if(c.Condition()) c.Move();} 
 
-		triggers = new Func<bool>[t.Length + 1];
+		triggers = new boolFunction[t.Length + 1];
 
-		triggers[0] = {return !started;}; // This event can't run if it's already 
+		triggers[0] = () => {return !started;}; // This event can't run if it's already 
 		for (int i = 0; i < t.Length; i++)
 		{
 			triggers[i+1] = t[i];
@@ -31,7 +35,7 @@ public class Outcome  {
 		if (time < startTime)
 			return false; // Only trigger if enough time has passed
 
-		foreach (Func<bool> f in triggers)
+		foreach (boolFunction f in triggers)
 		{
 			if (!f()) // Iterate through triggers, if any of them haven't happened 
 				return false;
@@ -45,11 +49,10 @@ public class Outcome  {
 		started = true; // won't be triggered again.
 
 
-		foreach (Func<> a in actions)
+		foreach (voidFunction a in actions)
 		{
 			a(); // Results of actions. Can affect character moods or cause them to do things
 		}
-		return e; // if true, ends the event. if false, nothing changes.
+		return endEvent; // if true, ends the event. if false, nothing changes.
 	}
-*/
 }
