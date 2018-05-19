@@ -42,7 +42,7 @@ public class Seat : MonoBehaviour
 		interactionDisplay.SetActive(false);
 	}
 
-	void AttemptSit(GameObject g)
+	public void AttemptSit(GameObject g)
 	{
 		if(occupied || Vector2.Distance(g.transform.position, this.transform.position) > maxInteractionDistance) return;
 		Sit(g);
