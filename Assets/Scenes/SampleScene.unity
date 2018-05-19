@@ -1085,7 +1085,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2592,10 +2592,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b87cc43b746b7b4db2d00a04748cf7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bus: {fileID: 1180231026}
   bg0: {fileID: 1813736342}
   bg1: {fileID: 1115162760}
   bg2: {fileID: 1531400633}
   bg3: {fileID: 1573440930}
+  busBouncePeriod: 0.5
+  busBounceAmount: 5
   speed: 0.2
   bg1PercentIncrease: 1.2
   bg2PercentIncrease: 2.5

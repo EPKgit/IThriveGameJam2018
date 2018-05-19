@@ -45,7 +45,7 @@ public class BusManager : Singleton<BusManager>
 	public int getSeat(string id)
 	{
 		for(int x = 0; x < size; ++x)
-			if(seats[x].occupant.GetComponent<Character>() != null && seats[x].occupant.GetComponent<Character>().id.CompareTo(id) == 0)
+			if(seats[x].occupant != null && seats[x].occupant.GetComponent<Character>() != null && seats[x].occupant.GetComponent<Character>().id.CompareTo(id) == 0)
 				return x;
 		return -1;
 	}	
