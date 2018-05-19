@@ -33,5 +33,21 @@ public class BusManager : Singleton<BusManager>
 		return false;
 	}
 	
+	public int adjacentSeat(int index)
+	{
+		if(index == 0)
+			return 0;
+		if(index == size - 1)
+			return size - 2;
+		return Random.Range(0, 1) == 0 ? index - 1 : index + 1;
+	}
+
+	public int getSeat(string id)
+	{
+		for(int x = 0; x < size; ++x)
+			if(seats[x].occupant.GetComponent<Character>() != null && seats[x].occupant.GetComponent<Character>().id.CompareTo(id) == 0)
+				return x;
+		return -1;
+	}	
 	
 }

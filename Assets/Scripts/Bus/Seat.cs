@@ -18,7 +18,7 @@ public class Seat : MonoBehaviour
 			interactionDisplay = this.transform.GetChild(0).gameObject;
 		InteractionHide();
 		yield return new WaitUntil( () => PlayerInteraction.instance != null);
-		PlayerInteraction.instance.interact += AttemptSit;
+		PlayerInteraction.instance.sit += AttemptSit;
 		PlayerInteraction.instance.move += Stand;
 		player = PlayerInteraction.instance.gameObject;
 	}
@@ -52,16 +52,22 @@ public class Seat : MonoBehaviour
 	{
 		occupant = g;
 		if(g.GetComponent<Sittable>() != null)
+		{
 			g.GetComponent<Sittable>().SetSitting(true, this);
+		}
 	}
 
 	void Stand(GameObject g)
 	{
 		if(g == occupant)
 		{
-			occupant = null;
 			if(g.GetComponent<Sittable>() != null)
-				g.GetComponent<Sittable>().SetSitting(false, this);
+			{
+				if(g.GetComponent<Sittable>().SetSitting(false, this))
+				{
+					occupant = null;
+				}
+			}
 		}
 	}
 

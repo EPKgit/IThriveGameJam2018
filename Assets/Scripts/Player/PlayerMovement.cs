@@ -9,8 +9,24 @@ public class PlayerMovement : Singleton<PlayerMovement>
 	private Rigidbody2D rb;
 	private Animator animator;
 
+	private bool canMove;
+	public bool CanMove
+	{
+		get
+		{
+			return canMove;
+		}
+
+		set
+		{
+			canMove = value;
+			rb.velocity = Vector2.zero;
+		}
+	}
+
 	void Start () 
 	{
+		canMove = true;
 		base.EnforceSingleton();
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
@@ -18,7 +34,8 @@ public class PlayerMovement : Singleton<PlayerMovement>
 	
 	void Update ()
 	{
-		float moveHorizontal = Input.GetAxis("Horizontal");
+		if(!canMove) return;
+		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 		rb.velocity = new Vector2(moveHorizontal * speed, 0);
 		animator.SetFloat("XVelocity", moveHorizontal);
 		//rb.AddForce(new Vector2(moveHorizontal * speed, 0));

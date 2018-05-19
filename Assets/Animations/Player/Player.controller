@@ -49,6 +49,14 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 0748bdcd28b24284590126e036566cc8, type: 2}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: XVelocity
+    m_Mirror: 0
+  - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 0422dd70f20d03c46b4cb8d5b6c9b13e, type: 2}
     m_Threshold: 1
     m_Position: {x: 1, y: 0}
@@ -117,7 +125,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Walking
+  m_Name: Standing
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -157,7 +165,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e90a95f47f046074bb65f689630ad06d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9814c7dc8ac6cb94fb7ee32eb895a455, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
