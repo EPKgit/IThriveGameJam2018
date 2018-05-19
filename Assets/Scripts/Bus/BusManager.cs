@@ -42,6 +42,13 @@ public class BusManager : Singleton<BusManager>
 		return Random.Range(0, 1) == 0 ? index - 1 : index + 1;
 	}
 
+	public Seat getSeat(int index)
+	{
+		if(index >= 0 && index < size)
+			return seats[index];
+		return null;
+	}
+
 	public int getSeat(string id)
 	{
 		for(int x = 0; x < size; ++x)
