@@ -14,7 +14,8 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 	void Start () 
 	{
 		base.EnforceSingleton();
-		interact = Debug;
+		interact = nocrash;
+		move = nocrash;
 	}
 	
 	void Update () 
@@ -23,9 +24,12 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 			interact(this.gameObject);
 		if(Input.GetAxis("Horizontal") != 0)
 			move(this.gameObject);
+		if(Input.GetKeyDown(KeyCode.Space))
+			for(int x = 0; x < BusManager.instance.size; ++x)
+				Debug.Log(x + " " + BusManager.instance.seatOccupied(x));
 	}
 
-	void Debug(GameObject g)
+	void nocrash(GameObject g)
 	{
 
 	}
