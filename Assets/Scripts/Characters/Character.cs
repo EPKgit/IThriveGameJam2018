@@ -27,9 +27,7 @@ public class Character : MonoBehaviour {
     public Vector2 desired;
     public Sittable sit;
 	// Use this for initialization
-	IEnumerator Start () {
-       
-        
+	IEnumerator Start () { 
         yield return new WaitUntil( () => BusManager.instance != null);
         busManager = BusManager.instance;
         sprite = GetComponent<SpriteRenderer>();
@@ -43,26 +41,22 @@ public class Character : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-        Debug.Log(rb.velocity);
-        Debug.Log(Mathf.Abs(desired.x - rb.position.x));
+      //  Debug.Log(rb.velocity);
+        //Debug.Log(Mathf.Abs(desired.x - rb.position.x));
         if (sliding == true) {
             if (Mathf.Abs(desired.x-rb.position.x)<=0.2)
             {
-                Debug.Log("in");
+          //      Debug.Log("in");
                 sliding = false;
                 rb.velocity = Vector2.zero;
-                
                 rb.position = desired;
                 Seat s = busManager.getSeat(location);
                 s.AttemptSit(this.gameObject);
-
-
             }
             else
             {
                 if (desired.x > rb.position.x)
                 {
-                   
                     rb.velocity = new Vector2(1f * speed, 0);
                     animator.SetFloat("XVelocity", 1f);
                     sprite.flipX = false;
@@ -79,11 +73,6 @@ public class Character : MonoBehaviour {
                 }
             }
         }
-      
-
-
-
-
     }
 
     public int getMood () {
@@ -99,28 +88,17 @@ public class Character : MonoBehaviour {
 
     public void moveSeat(int seat) {
      //   Debug.Log("in");
-        
         if (location != seat) {
-            
             //Debug.Log("location is not seat");
             desired = busManager.seatLocation(seat);
             //Debug.Log(desired);
-                
-            
                 //Debug.Log("position != desired");
-                
                 if (!busManager.seatOccupied(seat))
                 {
-                
-               
                     location = seat;
-                
                 //Debug.Log(location); 
-                   
                     sliding =true;
                 }    
             }
             }
-        
-   
 }
