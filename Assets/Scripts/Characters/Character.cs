@@ -38,13 +38,13 @@ public class Character : MonoBehaviour {
         sliding = false;
         //Debug.Log(busManager.seatLocation(0));
         //Debug.Log(busManager.seatLocation(1));
-        Debug.Log(busManager.seatLocation(2));
-        Debug.Log(rb.position);
-        Debug.Log(desired);
+       // Debug.Log(busManager.seatLocation(2));
+       // Debug.Log(rb.position);
+       // Debug.Log(desired);
 
 
         //rb.velocity = new Vector2(.1f * .5f, 0);
-        moveSeat(2);
+       // moveSeat(2);
     }
 
     // Update is called once per frame
@@ -89,13 +89,13 @@ public class Character : MonoBehaviour {
     
 
     void moveSeat(int seat) {
-        Debug.Log("in");
+     //   Debug.Log("in");
         
         if (location != seat) {
             
-            Debug.Log("location is not seat");
+            //Debug.Log("location is not seat");
             desired = busManager.seatLocation(seat);
-            Debug.Log(desired);
+            //Debug.Log(desired);
                 
             
                 //Debug.Log("position != desired");
@@ -105,13 +105,8 @@ public class Character : MonoBehaviour {
                     location = seat;
                 Debug.Log(location); 
                     sliding =true;
-                
-                }
-                 
+                }    
             }
-            
-            
-   
             }
         
    
