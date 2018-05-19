@@ -52,16 +52,22 @@ public class Seat : MonoBehaviour
 	{
 		occupant = g;
 		if(g.GetComponent<Sittable>() != null)
+		{
 			g.GetComponent<Sittable>().SetSitting(true, this);
+		}
 	}
 
 	void Stand(GameObject g)
 	{
 		if(g == occupant)
 		{
-			occupant = null;
 			if(g.GetComponent<Sittable>() != null)
-				g.GetComponent<Sittable>().SetSitting(false, this);
+			{
+				if(g.GetComponent<Sittable>().SetSitting(false, this))
+				{
+					occupant = null;
+				}
+			}
 		}
 	}
 
