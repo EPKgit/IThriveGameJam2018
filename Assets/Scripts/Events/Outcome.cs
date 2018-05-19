@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Outcome  {
-
-	public Func<>[] actions a;
+/*
+	public Func<>[] actions;
 	public Func<bool>[] triggers;
 	public float startTime;
 	private float callTime;
@@ -51,5 +51,5 @@ public class Outcome  {
 		}
 		return e; // if true, ends the event. if false, nothing changes.
 	}
-
+*/
 }

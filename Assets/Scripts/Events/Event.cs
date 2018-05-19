@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Event : Outcome
 {
-	
+	/*/
 	public Outcome[] outcomes; 
 	
 
@@ -23,5 +23,5 @@ public class Event : Outcome
 				return true; // ends the event
 		}
 		return false;
-	}
+	}*/
 }

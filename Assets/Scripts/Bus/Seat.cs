@@ -18,7 +18,7 @@ public class Seat : MonoBehaviour
 			interactionDisplay = this.transform.GetChild(0).gameObject;
 		InteractionHide();
 		yield return new WaitUntil( () => PlayerInteraction.instance != null);
-		PlayerInteraction.instance.interact += AttemptSit;
+		PlayerInteraction.instance.sit += AttemptSit;
 		PlayerInteraction.instance.move += Stand;
 		player = PlayerInteraction.instance.gameObject;
 	}
