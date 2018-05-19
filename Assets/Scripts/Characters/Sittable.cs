@@ -29,9 +29,12 @@ public class Sittable : MonoBehaviour
 
 	bool Sit(Seat s)
 	{
-		coolingDown = true;
-		PlayerMovement.instance.CanMove = false;
-		StartCoroutine(SitCooldown());
+		if(GetComponent<PlayerMovement>() != null)
+		{
+			coolingDown = true;
+			PlayerMovement.instance.CanMove = false;
+			StartCoroutine(SitCooldown());
+		}
 		sitting = true;
 		this.gameObject.transform.position = s.transform.position;
 		animator.SetBool("IsSitting", true);
