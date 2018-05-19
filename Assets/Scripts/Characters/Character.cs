@@ -10,6 +10,7 @@ public class Character : MonoBehaviour {
     public BusManager busManager;
     private Rigidbody2D rb;
     private Animator animator;
+    public SpriteRenderer sprite;
     private bool sliding;
     public bool Sliding{
         get
@@ -31,22 +32,26 @@ public class Character : MonoBehaviour {
         
         yield return new WaitUntil( () => BusManager.instance != null);
         busManager = BusManager.instance;
-        
+        sprite = GetComponent<SpriteRenderer>();
         mood = 0;
         sit = GetComponent<Sittable>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sliding = false;
-        moveSeat(2);
+        //moveSeat(2);
     }
 
     // Update is called once per frame
     void FixedUpdate () {
+        Debug.Log(rb.velocity);
+        Debug.Log(Mathf.Abs(desired.x - rb.position.x));
         if (sliding == true) {
-            if (Vector2.Distance(rb.position,desired)==float.Epsilon)
+            if (Mathf.Abs(desired.x-rb.position.x)<=0.2)
             {
+                Debug.Log("in");
                 sliding = false;
                 rb.velocity = Vector2.zero;
+                
                 rb.position = desired;
                 Seat s = busManager.getSeat(location);
                 s.AttemptSit(this.gameObject);
@@ -57,13 +62,20 @@ public class Character : MonoBehaviour {
             {
                 if (desired.x > rb.position.x)
                 {
-                    rb.velocity = new Vector2(.5f * speed, 0);
-                    animator.SetFloat("XVelocity", .5f);
+                   
+                    rb.velocity = new Vector2(1f * speed, 0);
+                    animator.SetFloat("XVelocity", 1f);
+                    sprite.flipX = false;
+
                 }
                 if (desired.x < rb.position.x)
                 {
-                    rb.velocity = new Vector2(-.5f * speed, 0);
-                    animator.SetFloat("XVelocity", -.5f);
+                    
+                    rb.velocity = new Vector2(-1f * speed, 0);
+                    animator.SetFloat("XVelocity", -1f);
+                    sprite.flipX = true;
+
+
                 }
             }
         }
