@@ -52,7 +52,7 @@ public class Seat : MonoBehaviour
 	{
 		occupant = g;
 		if(g.GetComponent<Sittable>() != null)
-			g.GetComponent<Sittable>().Sitting = true;
+			g.GetComponent<Sittable>().SetSitting(true, this);
 	}
 
 	void Stand(GameObject g)
@@ -61,7 +61,7 @@ public class Seat : MonoBehaviour
 		{
 			occupant = null;
 			if(g.GetComponent<Sittable>() != null)
-				g.GetComponent<Sittable>().Sitting = false;
+				g.GetComponent<Sittable>().SetSitting(false, this);
 		}
 	}
 

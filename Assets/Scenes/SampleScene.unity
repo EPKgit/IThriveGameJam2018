@@ -480,7 +480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfeb2e6663db04429c78134c8393c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  events: []
 --- !u!1 &1005054504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1077,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1411932012}
+  - component: {fileID: 1411932013}
   m_Layer: 0
   m_Name: BusManager
   m_TagString: Untagged
@@ -1098,6 +1098,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1411932013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411932011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9062a599622fab42b973191eb03253c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gseats:
+  - {fileID: 1161663389}
+  - {fileID: 440255882}
+  - {fileID: 8195770}
+  - {fileID: 1065345682}
+  - {fileID: 1532930749}
+  - {fileID: 1922343248}
+  size: 0
 --- !u!1 &1511446312
 GameObject:
   m_ObjectHideFlags: 0
