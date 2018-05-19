@@ -31,13 +31,13 @@ public class Character : MonoBehaviour {
         
         yield return new WaitUntil( () => BusManager.instance != null);
         busManager = BusManager.instance;
-        location = busManager.getSeat(id);
+        
         mood = 0;
         sit = GetComponent<Sittable>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sliding = false;
-       // moveSeat(2);
+        moveSeat(2);
     }
 
     // Update is called once per frame
@@ -48,7 +48,9 @@ public class Character : MonoBehaviour {
                 sliding = false;
                 rb.velocity = Vector2.zero;
                 rb.position = desired;
-                
+                Seat s = busManager.getSeat(location);
+                s.AttemptSit(this.gameObject);
+
 
             }
             else
@@ -56,10 +58,12 @@ public class Character : MonoBehaviour {
                 if (desired.x > rb.position.x)
                 {
                     rb.velocity = new Vector2(.5f * speed, 0);
+                    animator.SetFloat("XVelocity", .5f);
                 }
                 if (desired.x < rb.position.x)
                 {
                     rb.velocity = new Vector2(-.5f * speed, 0);
+                    animator.SetFloat("XVelocity", -.5f);
                 }
             }
         }
@@ -70,18 +74,18 @@ public class Character : MonoBehaviour {
 
     }
 
-    int getMood () {
+    public int getMood () {
         return mood;
     }
 
-    int getLocation()
+    public int getLocation()
     {
         return busManager.getSeat(id); 
     }
 
     
 
-    void moveSeat(int seat) {
+    public void moveSeat(int seat) {
      //   Debug.Log("in");
         
         if (location != seat) {
@@ -95,8 +99,11 @@ public class Character : MonoBehaviour {
                 
                 if (!busManager.seatOccupied(seat))
                 {
+                
+               
                     location = seat;
-                Debug.Log(location); 
+                
+                //Debug.Log(location); 
                    
                     sliding =true;
                 }    
