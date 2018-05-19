@@ -2,15 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventManager : MonoBehaviour {
+public class EventManager : Singleton<EventManager>
+{
+	public float gameTime;
 
-	// Use this for initialization
-	void Start () {
-		
+	public Event[] events;
+	//public Queue<Event> events;
+
+	void Start () 
+	{
+		gameTime = 0;
+		StartCoroutine(RunGame());
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	IEnumerator RunGame()
+	{
+		gameTime += Time.deltaTime;
+		yield return null;
 	}
+
 }

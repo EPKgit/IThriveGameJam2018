@@ -18,7 +18,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
 	
 	void Update ()
 	{
-		float moveHorizontal = Input.GetAxis("Horizontal");
+		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 		rb.velocity = new Vector2(moveHorizontal * speed, 0);
 		animator.SetFloat("XVelocity", moveHorizontal);
 		//rb.AddForce(new Vector2(moveHorizontal * speed, 0));
