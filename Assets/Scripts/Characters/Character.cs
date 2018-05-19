@@ -24,26 +24,19 @@ public class Character : MonoBehaviour {
         }
     }
     public Vector2 desired;
-
+    public Sittable sit;
 	// Use this for initialization
 	IEnumerator Start () {
        
-
+        
         yield return new WaitUntil( () => BusManager.instance != null);
         busManager = BusManager.instance;
-        desired = busManager.seatLocation(location);
+        location = busManager.getSeat(id);
         mood = 0;
+        sit = GetComponent<Sittable>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sliding = false;
-        //Debug.Log(busManager.seatLocation(0));
-        //Debug.Log(busManager.seatLocation(1));
-       // Debug.Log(busManager.seatLocation(2));
-       // Debug.Log(rb.position);
-       // Debug.Log(desired);
-
-
-        //rb.velocity = new Vector2(.1f * .5f, 0);
        // moveSeat(2);
     }
 
@@ -83,7 +76,7 @@ public class Character : MonoBehaviour {
 
     int getLocation()
     {
-        return location; 
+        return busManager.getSeat(id); 
     }
 
     
@@ -104,6 +97,7 @@ public class Character : MonoBehaviour {
                 {
                     location = seat;
                 Debug.Log(location); 
+                   
                     sliding =true;
                 }    
             }
