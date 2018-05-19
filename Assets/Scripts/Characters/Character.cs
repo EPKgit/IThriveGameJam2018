@@ -14,7 +14,9 @@ public class Character : MonoBehaviour {
     public Vector2 desired;
 
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
+        yield return new WaitUntil( () => BusManager.instance != null);
+        busManager = BusManager.instance;
         desired = busManager.seatLocation(2);
         mood = 0;
         rb = GetComponent<Rigidbody2D>();
