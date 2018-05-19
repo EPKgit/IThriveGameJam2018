@@ -10,6 +10,8 @@ public class Seat : MonoBehaviour
 	public bool occupied { get { return occupant != null; } }
 	public GameObject interactionDisplay;
 
+	private GameObject player;
+
 	IEnumerator Start () 
 	{
 		if(interactionDisplay == null)
@@ -17,6 +19,16 @@ public class Seat : MonoBehaviour
 		InteractionHide();
 		yield return new WaitUntil( () => PlayerInteraction.instance != null);
 		PlayerInteraction.instance.interact += AttemptSit;
+		player = PlayerInteraction.instance.gameObject;
+	}
+
+	void Update ()
+	{
+		if(player == null) return;
+		if(Vector2.Distance(player.transform.position, this.transform.position) < maxInteractionDistance)
+			InteractionDisplay();
+		else
+			InteractionHide();
 	}
 	
 	void InteractionDisplay()
@@ -27,18 +39,6 @@ public class Seat : MonoBehaviour
 	void InteractionHide()
 	{
 		interactionDisplay.SetActive(false);
-	}
-
-	void OnTriggerEnter2D(Collider2D other)
-    {
-		if(other.gameObject.tag.CompareTo("Player") == 0 && !occupied)
-			InteractionDisplay();
-	}
-
-	void OnTriggerExit2D(Collider2D other)
-	{
-		if(other.gameObject.tag.CompareTo("Player") == 0 )
-			InteractionHide();
 	}
 
 	void AttemptSit(GameObject g)
