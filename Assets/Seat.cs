@@ -19,6 +19,7 @@ public class Seat : MonoBehaviour
 		InteractionHide();
 		yield return new WaitUntil( () => PlayerInteraction.instance != null);
 		PlayerInteraction.instance.interact += AttemptSit;
+		PlayerInteraction.instance.move += Stand;
 		player = PlayerInteraction.instance.gameObject;
 	}
 
@@ -43,20 +44,25 @@ public class Seat : MonoBehaviour
 
 	void AttemptSit(GameObject g)
 	{
-		Debug.Log("attempt to sit " + g.name);
 		if(occupied || Vector2.Distance(g.transform.position, this.transform.position) > maxInteractionDistance) return;
-		Debug.Log("sits");
 		Sit(g);
 	}
 
 	void Sit(GameObject g)
 	{
 		occupant = g;
+		if(g.GetComponent<Sittable>() != null)
+			g.GetComponent<Sittable>().Sitting = true;
 	}
 
-	void Stand()
+	void Stand(GameObject g)
 	{
-		occupant = null;
+		if(g == occupant)
+		{
+			occupant = null;
+			if(g.GetComponent<Sittable>() != null)
+				g.GetComponent<Sittable>().Sitting = false;
+		}
 	}
 
 }

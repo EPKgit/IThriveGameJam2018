@@ -9,6 +9,7 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 
 	public delegate void InteractionEvent(GameObject g);
 	public InteractionEvent interact;
+	public InteractionEvent move;
 
 	void Start () 
 	{
@@ -20,12 +21,12 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 	{
 		if(Input.GetKeyDown(KeyCode.E))
 			interact(this.gameObject);
+		if(Input.GetAxis("Horizontal") != 0)
+			move(this.gameObject);
 	}
 
 	void Debug(GameObject g)
 	{
 
 	}
-
-
 }
