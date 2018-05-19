@@ -5,9 +5,9 @@ using UnityEngine;
 public class BusManager : Singleton<BusManager>
 {
 	public GameObject[] gseats;
+	[HideInInspector]public int size;
 
 	private Seat[] seats;
-	private int size;
 
 	void Start () 
 	{
@@ -19,14 +19,14 @@ public class BusManager : Singleton<BusManager>
 				Debug.Log("FATAL ERROR: SEAT NOT ATTACHED TO GAMEOBJECT" + gseats[x].name);
 	}
 
-	Vector2 seatLocation(int index)
+	public Vector2 seatLocation(int index)
 	{
 		if(index < 0 || index >= size)
 			return new Vector2(0,0);
 		return gseats[index].transform.position;
 	}
 
-	bool seatOccupied(int index)
+	public bool seatOccupied(int index)
 	{
 		if(index >= 0 && index < size)
 			return seats[index].occupied;

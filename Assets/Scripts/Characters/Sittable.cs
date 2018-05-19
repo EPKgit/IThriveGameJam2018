@@ -2,27 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sittable : MonoBehaviour {
+public class Sittable : MonoBehaviour 
+{
+
+	public bool sitting;
 
 	private Animator animator;
 
 	void Start()
 	{
+		sitting = false;
 		animator = GetComponent<Animator>();
 	}
-	private bool sitting;
-	
-	public bool Sitting
-	{
-		get
-		{
-			return sitting;
-		}
 
-		set
-		{
-			sitting = value;
-			animator.SetBool("IsSitting", value);
-		}
+	
+
+	public void SetSitting(bool value, Seat s)
+	{
+		sitting = value;
+		this.gameObject.transform.position = s.transform.position;
+		animator.SetBool("IsSitting", value);
 	}
 }
