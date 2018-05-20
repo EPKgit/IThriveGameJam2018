@@ -8,7 +8,7 @@ public class Event : Outcome
 	public Outcome[] outcomes; 
 	
 
-	public Event(voidFunction[] a, boolFunction[] t, float s, bool e, Outcome[] o, float deltaS = 1f) : base(a, t, s, e, deltaS)
+	public Event(voidFunction[] a, boolFunction[] t, float s, Outcome[] o, float deltaS = 1f) : base(a, t, s, true, deltaS)
 	{
 		outcomes = o; // it acts like an outcome- is triggered, causes things, can end
 						// except it has a list of outcomes it iterates through like the event manager 
