@@ -41,9 +41,9 @@ public class PlayerMovement : Singleton<PlayerMovement>
 		rb.velocity = new Vector2(moveHorizontal * speed, 0);
 		animator.SetFloat("XVelocity", moveHorizontal);
 		if(moveHorizontal == -1)
-			sprite.flipX = true;
-		else
 			sprite.flipX = false;
+		else
+			sprite.flipX = true;
 		//rb.AddForce(new Vector2(moveHorizontal * speed, 0));
 	}
 }
