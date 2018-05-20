@@ -8,6 +8,7 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 {
 
 	public List<Character> chars;
+	public float maxInteractionDistance;
 
 	public delegate void InteractionEvent(GameObject g);
 	public InteractionEvent sit;
@@ -41,15 +42,16 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 	void AttemptTalk(GameObject g)
 	{
 		float mindist = float.MaxValue;
-		Character min;
+		Character min = null;
 		foreach(Character c in chars)
 		{
-			if(Vector2.Distance(c.gameObject.transform.position, transform.position) < mindist)
+			if(Vector2.Distance(c.gameObject.transform.position, transform.position) < mindist && c != GetComponent<Character>())
 			{
 				mindist = Vector2.Distance(c.gameObject.transform.position, transform.position);
 				min = c;
 			}
 		}
-		//min.Talk(GetComponent<Character>());
+		if(min != null && mindist < maxInteractionDistance)
+			min.Talk(GetComponent<Character>());
 	}
 }
