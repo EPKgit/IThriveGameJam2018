@@ -33,7 +33,8 @@ public class AudioManager : Singleton<AudioManager>
 		yield return new WaitForSecondsRealtime(2f);
 		source.clip = EngineNoise;
 		source.Play();
-		source.pitch = 2;
+		//source.pitch = 2;
+		source.volume = svolume;
 		source.loop = true;
 	}
 
