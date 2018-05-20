@@ -16,7 +16,7 @@ public class EventManager : Singleton<EventManager>
 
 	void Start () 
 	{
-		characters = new List<Character>(GetComponents<Character>()); 
+		//characters = new List<Character>(GetComponents<Character>()); 
 		events = new List<Event>();
 		activeEvents = new List<Event>();
 		removeEvents = new List<Event>();
@@ -51,7 +51,7 @@ public class EventManager : Singleton<EventManager>
 			removeEvents.Clear();
 			
 			BackgroundManager.instance.MoveBackground(gameTime);
-			
+
 			yield return new WaitForEndOfFrame();
 		}
 	}
