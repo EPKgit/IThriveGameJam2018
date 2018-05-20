@@ -18,17 +18,21 @@ public class Homeless : Character
 
 		float s = 50f;
 
-		Outcome[] o = new Outcome[1]{
+		Outcome[] o = new Outcome[2]{
 
 			new Outcome(new voidFunction[1]{new voidFunction(() => {
-                c.moveSeat(7);
-                PlayerInteraction.instance.chars["Child"].moveSeat(8);
-                c.setMood(0);
-                PlayerInteraction.instance.chars["Child"].setMood(0);
+                c.setMood(-1);
             })},	
             new boolFunction[1]{new boolFunction(() => { return true;})}, 
-                    40f,													
-                    true)
+                    7f,													
+                    false),
+
+            new Outcome(new voidFunction[1]{new voidFunction(() => {
+                c.setMood(-2);
+            })},	
+            new boolFunction[1]{new boolFunction(() => { return true;})}, 
+                    10f,													
+                    false),
 		};
 
 		return new Event(a,t,s,o); //return this event

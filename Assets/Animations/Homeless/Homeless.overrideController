@@ -8,13 +8,13 @@ AnimatorOverrideController:
   m_Name: Homeless
   m_Controller: {fileID: 9100000, guid: 823e7707a7b55e0429030a622b2faaca, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 9814c7dc8ac6cb94fb7ee32eb895a455, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 12004be772c2dfc4983bcd10ea0a621a, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 0748bdcd28b24284590126e036566cc8, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 24ae98f6ec6fb86418cb31053c3da5d9, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 70d2fa2c136235e4aa8ac6827c35f9b0, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 6e2f612d53bb3ed43ac799fe3f6a1160, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: d0eee8554cc71144ea44d9ddd60dfc50, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 6e2f612d53bb3ed43ac799fe3f6a1160, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: e90a95f47f046074bb65f689630ad06d, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 9047f85ff0801384c974055bf1931707, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 298141ac830d74e4482c4caf0d623883, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9814c7dc8ac6cb94fb7ee32eb895a455, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5fe2bdf451332cc489e4b28551cd5430, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0748bdcd28b24284590126e036566cc8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0babf46a4c7940242ac5420e0c07493e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d0eee8554cc71144ea44d9ddd60dfc50, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ac9cf35f9fdf0b742965949f6986fd54, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 70d2fa2c136235e4aa8ac6827c35f9b0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ac9cf35f9fdf0b742965949f6986fd54, type: 2}
