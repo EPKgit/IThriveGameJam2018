@@ -362,7 +362,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTime: 0
-  events: []
 --- !u!4 &327665187
 Transform:
   m_ObjectHideFlags: 0
@@ -1550,9 +1549,10 @@ MonoBehaviour:
   mood: 0
   id: hi
   location: 0
-  speed: 0
+  speed: 3
   busManager: {fileID: 385830490}
   desired: {x: 0, y: 0}
+  sit: {fileID: 0}
 --- !u!1 &2074535289
 GameObject:
   m_ObjectHideFlags: 0
