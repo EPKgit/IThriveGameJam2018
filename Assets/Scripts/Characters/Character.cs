@@ -57,6 +57,7 @@ public class Character : MonoBehaviour
             case 2:
                 break;
             default:
+                break;
         }
     }
    
