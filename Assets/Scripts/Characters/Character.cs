@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     public bool isPlayer;
     public string id;
-    [HideInInspector]public int mood;
+    /*[HideInInspector]*/public int mood;
     [HideInInspector]public int location;
     public float speed;
     public int startingSeat;
@@ -25,7 +25,7 @@ public class Character : MonoBehaviour
     { 
         yield return new WaitUntil( () => BusManager.instance != null && PlayerInteraction.instance != null);
 
-        PlayerInteraction.instance.chars.Add(this);
+        PlayerInteraction.instance.chars.Add(id,this);
         
         mood = 0;
         
@@ -107,8 +107,20 @@ public class Character : MonoBehaviour
     {
         if (location != seat) 
         {
+            if (location != -1)
+                BusManager.instance.getSeat(BusManager.instance.getSeat(id)).Stand(gameObject);
             moving = true;
-            desired = BusManager.instance.seatLocation(seat);
+            if (seat != -1 && BusManager.instance.getSeat(seat).occupied)
+            {
+                seat = -1;
+                desired = (BusManager.instance.seatLocation(seat) + (Vector2)rb.position)/2;       
+            }
+            else if (seat == -1)
+            {
+                desired = (Vector2)rb.position;
+            }
+            else
+                desired = BusManager.instance.seatLocation(seat);
             location = seat;
         }
     }

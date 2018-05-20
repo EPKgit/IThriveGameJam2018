@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayerInteraction : Singleton<PlayerInteraction>
 {
 
-	public List<Character> chars;
+	public Dictionary<string,Character> chars;
 	public float maxInteractionDistance;
 
 	public delegate void InteractionEvent(GameObject g);
@@ -21,7 +21,7 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 		sit = nocrash;
 		move = nocrash;
 		talk = AttemptTalk;
-		chars = new List<Character>();
+		chars = new Dictionary<string,Character>();
 	}
 	
 	void Update () 
@@ -43,7 +43,7 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 	{
 		float mindist = float.MaxValue;
 		Character min = null;
-		foreach(Character c in chars)
+		foreach(Character c in chars.Values)
 		{
 			if(Vector2.Distance(c.gameObject.transform.position, transform.position) < mindist && c != GetComponent<Character>())
 			{

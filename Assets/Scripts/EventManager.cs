@@ -11,11 +11,11 @@ public class EventManager : Singleton<EventManager>
 	public List<Event> events;
 	private List<Event> activeEvents;
 	private List<Event> removeEvents;
-	public List<Character> characters;
+	private Dictionary<string,Character> characters;
 
 	IEnumerator Start () 
 	{
-		yield return new WaitUntil(() => PlayerInteraction.instance != null);
+		yield return new WaitUntil(() => PlayerInteraction.instance != null && PlayerInteraction.instance.chars.Count >= 5);
 		events = new List<Event>();
 		activeEvents = new List<Event>();
 		removeEvents = new List<Event>();
@@ -60,22 +60,21 @@ public class EventManager : Singleton<EventManager>
 
 	private void populateEvents()
 	{
-		
-
+		EXAMPLE_EVENT();
 		return;
 	}
 
 	private void EXAMPLE_EVENT()
 	{
 		voidFunction[] a = {
-			() => {Debug.Log("Action Triggered by event");}, //Actions when triggered
+			() => {Debug.Log(characters["Creep"].mood);}, //Actions when triggered
 			() => {Debug.Log("Multiple actions can be triggered");}
 			};
 		boolFunction[] t = {
 			() => {Debug.Log("Testing event for trigger (there can be more than one)"); return true;}//Trigger conditions
 			};
 
-		float s = 10f;//When to start the whole event
+		float s = 1f;//When to start the whole event
 
 		Outcome[] o = new Outcome[4]{
 			new Outcome(new voidFunction[2]{new voidFunction(() => {Debug.Log("Outcome 1");}),new voidFunction(() => {Debug.Log("Outcome 1 pt2");})},	//actions triggered BY outcome
