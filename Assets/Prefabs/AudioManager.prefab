@@ -150,15 +150,15 @@ MonoBehaviour:
   MainMenuMusic: {fileID: 8300000, guid: 08c1a03bce182104cafd4b98c628bfe1, type: 3}
   EngineNoise: {fileID: 8300000, guid: e7455278c0726ae488bd0932086dab9f, type: 3}
   maleSounds:
-  - {fileID: 8300000, guid: 638bbfa47f20be346803b95eda65ef2b, type: 3}
-  - {fileID: 8300000, guid: ad8f26370fdec8141af25bbc98b00795, type: 3}
-  - {fileID: 8300000, guid: d19b13e68e5cf0c4faa9be83983fafb0, type: 3}
+  - {fileID: 8300000, guid: a8fe1f341e34a614b878bc3e0f1658cd, type: 3}
+  - {fileID: 8300000, guid: 396fe6b1da3b150428e4c5ede0e7e77f, type: 3}
+  - {fileID: 8300000, guid: 4cb3965b28db62d47b30d0557a056511, type: 3}
   - {fileID: 8300000, guid: 34cbf564b2188de49a8e04afaec21c67, type: 3}
-  - {fileID: 8300000, guid: 2537d919ad3eea1488646595a09b267d, type: 3}
+  - {fileID: 8300000, guid: 712f0d21d6ac51e4cbe4533350b2d617, type: 3}
   femaleSounds:
-  - {fileID: 8300000, guid: 7cea9785779752645a6eb373a261c9f7, type: 3}
-  - {fileID: 8300000, guid: e9a1fc739b9971b41ab1fb24cf791e49, type: 3}
-  - {fileID: 8300000, guid: 45703a0f45c489643abc0795f14e77c7, type: 3}
-  - {fileID: 8300000, guid: 376f1f0a6072274479a4166be4a690c7, type: 3}
-  - {fileID: 8300000, guid: ea474a0e90f13e84581a1f8bd1d6d674, type: 3}
+  - {fileID: 8300000, guid: 670b20d0e3d124345b46010061d67719, type: 3}
+  - {fileID: 8300000, guid: a41eab97729f82f46989ac2a27384d96, type: 3}
+  - {fileID: 8300000, guid: 623652003cec4074a8ca4d078c61b15d, type: 3}
+  - {fileID: 8300000, guid: f934aefd0fd28fb49ae0da97b2fb07b9, type: 3}
+  - {fileID: 8300000, guid: 78ea0eecc3422314eaa8fadc8521e760, type: 3}
   source: {fileID: 82325301827615452}
