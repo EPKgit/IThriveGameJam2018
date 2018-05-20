@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
     [SerializeField]private bool coolingDown;
 
     public Character lastTalked;
+    public float timeTalked;
    
     /*[HideInInspector]*/public Vector2 desired;
 
@@ -40,6 +41,24 @@ public class Character : MonoBehaviour
         moveSeat(startingSeat);
     }
 
+    public void setMood(int newMood)
+    {
+        mood = newMood;
+        switch (mood)
+        {
+            case -2:
+                break;
+            case -1:
+                break;
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+        }
+    }
    
    public float dist;
     void FixedUpdate () {
@@ -92,6 +111,7 @@ public class Character : MonoBehaviour
         if(coolingDown) { Debug.Log("FAILED TALK"); return; }
         StartCoroutine(StartCooldown(0));
         lastTalked = c;
+        timeTalked = EventManager.instance.gameTime;
     }
 
     IEnumerator StartCooldown(float f)
