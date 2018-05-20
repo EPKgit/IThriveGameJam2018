@@ -7,10 +7,21 @@ public class BackgroundManager : Singleton<BackgroundManager>
 	public GameObject bus;
 	public GameObject bWheel;
 	public GameObject fWheel;
+
 	public GameObject bg0;
 	public GameObject bg1;
 	public GameObject bg2;
 	public GameObject bg3;
+
+	//public GameObject[] bg0s;
+	public GameObject[] bg1s;
+	public GameObject[] bg2s;
+	public GameObject[] bg3s;
+
+	//private int bg0index;
+	private int bg1index;
+	private int bg2index;
+	private int bg3index;
 
 	public float busBouncePeriod;
 	public float busBounceAmount;
@@ -19,12 +30,14 @@ public class BackgroundManager : Singleton<BackgroundManager>
 	public float bg2PercentIncrease;
 	public float bg3PercentIncrease;
 
-	public LayerMask layer;
 
 	void Start () 
 	{
 		base.EnforceSingleton();
-		Physics2D.IgnoreLayerCollision(layer, layer, true);
+		//bg0index = 0;
+		bg1index = 0;
+		bg2index = 0;
+		bg3index = 0;
 	}
 	
 	public void MoveBackground(float time)
