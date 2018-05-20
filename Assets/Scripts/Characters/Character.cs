@@ -12,32 +12,30 @@ public class Character : MonoBehaviour {
     private Animator animator;
     public SpriteRenderer sprite;
     private bool sliding;
-    public bool Sliding{
-        get
-        {
-            return sliding;
-        }
-
-        set
-        {
-            sliding = value;
-            rb.velocity = Vector2.zero;
-        }
-    }
+    public bool coolingDown;
+    public char lastTalked;
+    public bool talking;
+   
     public Vector2 desired;
     public Sittable sit;
 	// Use this for initialization
 	IEnumerator Start () { 
         yield return new WaitUntil( () => BusManager.instance != null);
         busManager = BusManager.instance;
+        talking = false;
         sprite = GetComponent<SpriteRenderer>();
         mood = 0;
+        coolingDown = false;
         sit = GetComponent<Sittable>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sliding = false;
+        
         //moveSeat(2);
+
     }
+
+   
 
     // Update is called once per frame
     void FixedUpdate () {
@@ -78,13 +76,34 @@ public class Character : MonoBehaviour {
     public int getMood () {
         return mood;
     }
-
+   
     public int getLocation()
     {
         return busManager.getSeat(id); 
     }
 
-    
+    IEnumerator CantSpeak()
+    {
+        yield return new WaitForSeconds(1f);
+        coolingDown = false;
+    }
+
+    public void talk(char id) {
+
+        if (lastTalked == id)
+        {
+            coolingDown = true;
+
+            StartCoroutine(CantSpeak());
+        }
+        else
+        {
+
+
+            lastTalked = id;
+        }
+    }
+
 
     public void moveSeat(int seat) {
      //   Debug.Log("in");
