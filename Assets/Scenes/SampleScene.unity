@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7859465d38bfec4b82c53cb2ac42e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFemale: 0
   isPlayer: 0
   id: Victim
   mood: 0
@@ -1269,6 +1270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7859465d38bfec4b82c53cb2ac42e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFemale: 0
   isPlayer: 0
   id: Child
   mood: 0
@@ -1945,6 +1947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7859465d38bfec4b82c53cb2ac42e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFemale: 0
   isPlayer: 1
   id: Player
   mood: 0
@@ -2064,6 +2067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7859465d38bfec4b82c53cb2ac42e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFemale: 0
   isPlayer: 0
   id: Creep
   mood: 0
@@ -2817,7 +2821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1449636814
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3742,6 +3746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7859465d38bfec4b82c53cb2ac42e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFemale: 0
   isPlayer: 0
   id: Lady
   mood: 0
@@ -4073,6 +4078,48 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1001 &2013411735
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4349410271259128, guid: 3c6198537645efd4a9dcd6b801ce81e6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349410271259128, guid: 3c6198537645efd4a9dcd6b801ce81e6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349410271259128, guid: 3c6198537645efd4a9dcd6b801ce81e6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349410271259128, guid: 3c6198537645efd4a9dcd6b801ce81e6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349410271259128, guid: 3c6198537645efd4a9dcd6b801ce81e6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349410271259128, guid: 3c6198537645efd4a9dcd6b801ce81e6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349410271259128, guid: 3c6198537645efd4a9dcd6b801ce81e6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349410271259128, guid: 3c6198537645efd4a9dcd6b801ce81e6, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3c6198537645efd4a9dcd6b801ce81e6, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2101182818
 GameObject:
   m_ObjectHideFlags: 0
@@ -4258,6 +4305,7 @@ MonoBehaviour:
   bg2PercentIncrease: 10
   bg3PercentIncrease: 1.5
   loadingScreen: {fileID: 1449636813}
+  loading: 0
 --- !u!4 &2117738233
 Transform:
   m_ObjectHideFlags: 0

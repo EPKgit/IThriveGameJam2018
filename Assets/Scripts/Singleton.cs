@@ -9,7 +9,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 	public void EnforceSingleton () 
 	{
 		if(instance != null)
-			Destroy(this);
+			Destroy(this.gameObject);
 		instance = (T)this;
 	}
 }

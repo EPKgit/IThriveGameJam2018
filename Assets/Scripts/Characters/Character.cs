@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour 
 {
+    public bool isFemale;
+
     public bool isPlayer;
     public string id;
     /*[HideInInspector]*/public int mood;
@@ -24,8 +26,7 @@ public class Character : MonoBehaviour
 
 	IEnumerator Start () 
     { 
-        yield return new WaitUntil( () => BusManager.instance != null && PlayerInteraction.instance != null);
-
+        yield return new WaitUntil( () => BusManager.instance != null && PlayerInteraction.instance != null && AudioManager.instance != null);
         PlayerInteraction.instance.chars.Add(id,this);
         
         mood = 0;
@@ -60,11 +61,13 @@ public class Character : MonoBehaviour
             case 2:
                 break;
             case 3:
-                mood = 3;
+                mood = 2;
                 break;
             default:
                 break;
         }
+        AudioManager.instance.playEmotionSound(mood, isFemale);
+        BusManager.instance.CreateEmotionBubble(mood, this.gameObject);
         Debug.Log(mood);
     }
    

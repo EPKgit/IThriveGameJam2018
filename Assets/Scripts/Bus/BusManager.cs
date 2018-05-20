@@ -56,5 +56,15 @@ public class BusManager : Singleton<BusManager>
 				return x;
 		return -1;
 	}	
+
+	public void CreateEmotionBubble(int mood, GameObject g)
+	{
+
+	}
+
+	private IEnumerator DeleteBubble(GameObject b)
+	{
+		yield return null;
+	}
 	
 }

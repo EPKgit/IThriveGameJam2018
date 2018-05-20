@@ -28,7 +28,7 @@ public class BackgroundManager : Singleton<BackgroundManager>
 
 	public GameObject loadingScreen;
 
-	private bool loading;
+	[SerializeField]private bool loading;
 
 
 	void Start () 

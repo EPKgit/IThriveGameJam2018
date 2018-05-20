@@ -11,10 +11,14 @@ public class AudioManager : Singleton<AudioManager>
 	public AudioClip MainMenuMusic;
 	public AudioClip EngineNoise;
 
+	public AudioClip[] maleSounds;
+    public AudioClip[] femaleSounds;
+
 	public AudioSource source;
 
 	void Start () 
 	{
+		base.EnforceSingleton();
 		DontDestroyOnLoad(gameObject);
 		mvolume = 1;
 		svolume = 1;	
@@ -48,6 +52,19 @@ public class AudioManager : Singleton<AudioManager>
 	public void changeSoundVolume(Slider s)
 	{
 		svolume = s.value;
+	}
+
+	public float getSoundVolume()
+	{
+		return svolume;
+	}
+
+	public void playEmotionSound(int mood, bool isFemale)
+	{
+		if(isFemale)
+            AudioManager.instance.source.PlayOneShot(femaleSounds[mood + 2], AudioManager.instance.getSoundVolume());
+        else
+            AudioManager.instance.source.PlayOneShot(maleSounds[mood + 2], AudioManager.instance.getSoundVolume());
 	}
 	
 }
