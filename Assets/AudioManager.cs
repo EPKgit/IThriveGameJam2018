@@ -76,9 +76,9 @@ public class AudioManager : Singleton<AudioManager>
 	public void playEmotionSound(int mood, bool isFemale)
 	{
 		if(isFemale)
-            AudioManager.instance.source.PlayOneShot(femaleSounds[mood + 2], AudioManager.instance.getSoundVolume());
+            AudioManager.instance.source.PlayOneShot(femaleSounds[mood + 2], svolume * 0.3f);
         else
-            AudioManager.instance.source.PlayOneShot(maleSounds[mood + 2], AudioManager.instance.getSoundVolume());
+            AudioManager.instance.source.PlayOneShot(maleSounds[mood + 2], svolume * 0.3f);
 	}
 	
 }
