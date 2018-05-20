@@ -1555,6 +1555,23 @@ Prefab:
       propertyPath: speed
       value: 1.3
       objectReference: {fileID: 0}
+    - target: {fileID: 212313999006501016, guid: f18c5b124f6467145a32b55ed352ae2a,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300016, guid: 65df1dfe419626745892a47efb70df61,
+        type: 3}
+    - target: {fileID: 95146679694625500, guid: f18c5b124f6467145a32b55ed352ae2a,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: dab1a0d5e7e1fdb45a2585ddabee864c,
+        type: 2}
+    - target: {fileID: 114813170847257616, guid: f18c5b124f6467145a32b55ed352ae2a,
+        type: 2}
+      propertyPath: sitHeight
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f18c5b124f6467145a32b55ed352ae2a, type: 2}
   m_IsPrefabParent: 0
@@ -2170,7 +2187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1449636814
 SpriteRenderer:
   m_ObjectHideFlags: 0
