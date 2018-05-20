@@ -20,7 +20,7 @@ public class Creep : Character
 
 		float s = 10f;//Change to 120fSDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
-		Outcome[] o = new Outcome[3]{
+		Outcome[] o = new Outcome[5]{
 			new Outcome(new voidFunction[1]{new voidFunction(() => {
                 List<int> openSeats = new List<int>();
                 for (int i = 0; i < 8; ++i) {
@@ -60,10 +60,29 @@ public class Creep : Character
 								false, 
                                 2f),
 			new Outcome(new voidFunction[1]{new voidFunction(() => { IsAnnoying = true;                   })},
-						new boolFunction[1]{new boolFunction(() => { return BusManager.instance.getSeat("Creep") != -1; })},
+						new boolFunction[1]{new boolFunction(() => { return c.isSitting(); })},
 								0f,
 								false,
-								10f) 
+								10f),
+            new Outcome(new voidFunction[1]{new voidFunction(() => { c.setMood(c.mood-1); BusManager.instance.getSeat(BusManager.instance.getSeat(c.id)).Stand(c.gameObject);})},
+						new boolFunction[1]{new boolFunction(() => { return c.lastTalked == PlayerInteraction.instance.chars["Player"] && Mathf.Abs(EventManager.instance.gameTime - c.timeTalked) < 5.0f && c.isSitting(); })},
+								0f,
+								false,
+                                4f),
+            new Outcome(new voidFunction[1]{new voidFunction(() => {
+
+                foreach(Character ch in PlayerInteraction.instance.chars.Values){
+                    if(ch.id != "Creep"){
+                        
+                        ch.setMood(ch.mood + 1);
+                    }
+                }
+                Debug.Log("Creepdone");
+                c.moveSeat(3);
+             })},
+            new boolFunction[1]{new boolFunction(() => { return c.mood == -2;})},
+                    0f,
+                    true)
 		};
 
 		return new Event(a,t,s,o); //return this event

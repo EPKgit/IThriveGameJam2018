@@ -16,6 +16,8 @@ public class EventManager : Singleton<EventManager>
 	IEnumerator Start () 
 	{
 		yield return new WaitUntil(() => PlayerInteraction.instance != null && PlayerInteraction.instance.chars.Count >= 5);
+		
+		base.EnforceSingleton();
 		events = new List<Event>();
 		activeEvents = new List<Event>();
 		removeEvents = new List<Event>();
@@ -61,6 +63,7 @@ public class EventManager : Singleton<EventManager>
 	private void populateEvents()
 	{
 		//EXAMPLE_EVENT();
+		events.Add(Child.childTantrum(characters["Child"]));
 		events.Add(Creep.creepRoam(characters["Creep"]));
 		return;
 	}

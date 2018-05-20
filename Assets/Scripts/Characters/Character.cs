@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     [HideInInspector]public SpriteRenderer sprite;
-    [SerializeField]private bool moving;
+    [SerializeField]public bool moving;
     [SerializeField]private bool coolingDown;
 
     public Character lastTalked;
