@@ -6,6 +6,14 @@ public class Homeless : Character
 {
 
     public bool sampleVariable;
+    public static bool isStealing = false;
+
+    public static void stopStealing(Character c){
+         c.setMood(-2);
+                isStealing = false;
+                c.GetComponent<Animator>().SetBool("SpecialAction", false);
+                c.moveSeat(0);
+     }
 
     public static Event stealingFood(Character c)
 	{
@@ -18,10 +26,12 @@ public class Homeless : Character
 
 		float s = 50f;
 
-		Outcome[] o = new Outcome[2]{
+		Outcome[] o = new Outcome[4]{
 
 			new Outcome(new voidFunction[1]{new voidFunction(() => {
                 c.setMood(-1);
+                c.GetComponent<Animator>().SetBool("SpecialAction", true);
+                isStealing = true;
             })},	
             new boolFunction[1]{new boolFunction(() => { return true;})}, 
                     7f,													
@@ -31,8 +41,22 @@ public class Homeless : Character
                 c.setMood(-2);
             })},	
             new boolFunction[1]{new boolFunction(() => { return true;})}, 
-                    10f,													
+                    12f,													
                     false),
+
+            new Outcome(new voidFunction[1]{new voidFunction(() => {
+                stopStealing(c);
+            })},	
+            new boolFunction[1]{new boolFunction(() => { return isStealing;})}, 
+                    18f,													
+                    true),
+
+            new Outcome(new voidFunction[1]{new voidFunction(() => {
+                stopStealing(c);
+            })},	
+            new boolFunction[1]{new boolFunction(() => { return !isStealing;})}, 
+                    20f,													
+                    true)
 		};
 
 		return new Event(a,t,s,o); //return this event

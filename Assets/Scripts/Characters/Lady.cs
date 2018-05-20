@@ -20,7 +20,7 @@ public class Lady : Character
 
 		float s = 10f;
 
-		Outcome[] o = new Outcome[1]{
+		Outcome[] o = new Outcome[2]{
 
 			new Outcome(new voidFunction[1]{new voidFunction(() => {
                 c.moveSeat(7);
@@ -30,6 +30,15 @@ public class Lady : Character
             })},	
             new boolFunction[1]{new boolFunction(() => { return true;})}, 
                     40f,													
+                    true),
+
+
+            new Outcome(new voidFunction[1]{new voidFunction(() => {
+                c.setMood(-1);
+                Homeless.stopStealing(PlayerInteraction.instance.chars["Homeless"]);
+            })},	
+            new boolFunction[1]{new boolFunction(() => { return c.lastTalked == PlayerInteraction.instance.chars["Player"] && Mathf.Abs(EventManager.instance.gameTime - c.timeTalked) < 5.0f;})}, 
+                    20f,													
                     true)
 		};
 
