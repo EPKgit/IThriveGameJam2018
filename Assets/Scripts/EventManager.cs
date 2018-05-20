@@ -63,6 +63,7 @@ public class EventManager : Singleton<EventManager>
 	private void populateEvents()
 	{
 		//EXAMPLE_EVENT();
+		events.Add(Lady.childTantrum(characters["Lady"]));
 		events.Add(Child.childTantrum(characters["Child"]));
 		events.Add(Creep.creepRoam(characters["Creep"]));
 		return;

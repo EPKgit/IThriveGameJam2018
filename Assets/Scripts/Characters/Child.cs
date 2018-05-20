@@ -18,7 +18,7 @@ public class Child : Character
 			() => {return true;}//Trigger conditions // probably not standing
 			};
 
-		float s = 10f;//Change to 120fSDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+		float s = 20f;//Change to 120fSDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
 		Outcome[] o = new Outcome[4]{
 
@@ -59,16 +59,14 @@ public class Child : Character
                     2f),	// Is this the final event? true means the event ends	
 
             new Outcome(new voidFunction[1]{new voidFunction(() => {
-                c.setMood(-1);
-                walkingRight = false;
+                Lady.consoleChild = true;
                 c.desired = new Vector2(-5f,0);
                 c.moving = true;
 
             })},	//actions triggered BY outcome
-            new boolFunction[1]{new boolFunction(() => { return walkingRight && c.transform.position.x > 2f;/*true if standing*/ })}, //conditions that trigger outcome (only triggers if all are true)
-                    0f,	// how long since the event started to check for the outcome completion													
-                    false, 
-                    2f)
+            new boolFunction[1]{new boolFunction(() => { return true;})}, //conditions that trigger outcome (only triggers if all are true)
+                    20f,	// how long since the event started to check for the outcome completion													
+                    true)
 		};
 
 		return new Event(a,t,s,o); //return this event

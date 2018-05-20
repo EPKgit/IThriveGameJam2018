@@ -18,7 +18,7 @@ public class Creep : Character
 			() => {return true;}//Trigger conditions // probably not standing
 			};
 
-		float s = 10f;//Change to 120fSDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+		float s = 90f;//Change to 120fSDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 
 		Outcome[] o = new Outcome[5]{
 			new Outcome(new voidFunction[1]{new voidFunction(() => {
