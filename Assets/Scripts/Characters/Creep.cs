@@ -39,7 +39,7 @@ public class Creep : Character
 						new boolFunction[1]{new boolFunction(() => { return !c.isSitting();/*true if standing*/ })}, //conditions that trigger outcome (only triggers if all are true)
 								0f,	// how long since the event started to check for the outcome completion													
 								false, 
-                                6f),	// Is this the final event? true means the event ends														
+                                10f),	// Is this the final event? true means the event ends														
 			new Outcome(new voidFunction[1]{new voidFunction(() => 
             {
                 IsAnnoying = false;

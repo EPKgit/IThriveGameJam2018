@@ -139,7 +139,7 @@ public class Character : MonoBehaviour
 
     public void moveSeat(int seat) 
     {
-        if (location != seat) 
+        if (BusManager.instance.getSeat(id) != seat) 
         {
             if (isSitting())
                 BusManager.instance.getSeat(BusManager.instance.getSeat(id)).Stand(gameObject);
