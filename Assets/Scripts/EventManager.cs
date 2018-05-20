@@ -67,36 +67,53 @@ public class EventManager : Singleton<EventManager>
 	private void EXAMPLE_EVENT()
 	{
 		voidFunction[] a = {
-			() => {Debug.Log(characters["Creep"].mood);}, //Actions when triggered
-			() => {Debug.Log("Multiple actions can be triggered");}
+			() => {return;}, //Actions when triggered
+			() => {BusManager.instance.getSeat(BusManager.instance.getSeat(characters["Creep"].id)).Stand(characters["Creep"].gameObject);}
 			};
 		boolFunction[] t = {
-			() => {Debug.Log("Testing event for trigger (there can be more than one)"); return true;}//Trigger conditions
+			() => {characters["Creep"].setMood(0);return characters["Creep"].isSitting();}//Trigger conditions // probably not standing
 			};
 
 		float s = 1f;//When to start the whole event
-
-		Outcome[] o = new Outcome[4]{
-			new Outcome(new voidFunction[2]{new voidFunction(() => {Debug.Log("Outcome 1");}),new voidFunction(() => {Debug.Log("Outcome 1 pt2");})},	//actions triggered BY outcome
-						new boolFunction[2]{new boolFunction(() => {Debug.Log("Check Outcome 1"); return true;}),new boolFunction(() => {Debug.Log("Second condition for outcome 1"); return true;})}, //conditions that trigger outcome (only triggers if all are true)
+        float annoyanceTimer = 0f;
+        bool IsAnnoying = false;
+		Outcome[] o = new Outcome[3]{
+			new Outcome(new voidFunction[1]{new voidFunction(() => {
+                List<int> openSeats = new List<int>();
+                for (int i = 0; i < 8; ++i) {
+                    if (!BusManager.instance.seatOccupied(i))
+                    {
+                        openSeats.Add(i);
+                    }
+                }
+                System.Random rng = new System.Random();
+                int selection = openSeats[(int)(rng.NextDouble() * openSeats.Count)];/*select a random open seat and move to*/
+                Debug.Log("Moving Creep to Seat #" + selection);
+                //IsAnnoying = true;
+                characters["Creep"].moveSeat(selection);
+                //annoyanceTimer = gameTime;
+            })},	//actions triggered BY outcome
+						new boolFunction[1]{new boolFunction(() => { return !characters["Creep"].isSitting();/*true if standing*/ })}, //conditions that trigger outcome (only triggers if all are true)
 								10f,	// how long since the event started to check for the outcome completion													
-								true),	// Is this the final event? true means the event ends														
-			new Outcome(new voidFunction[2]{new voidFunction(() => {Debug.Log("Outcome 2");}),new voidFunction(() => {Debug.Log("FAILURE");})},
-						new boolFunction[1]{new boolFunction(() => {Debug.Log("O2 FAILURE"); return true;})},
+								false, 
+                                15f),	// Is this the final event? true means the event ends														
+			new Outcome(new voidFunction[1]{new voidFunction(() => {Debug.Log("Annoyed Someone Maybe");})},
+						new boolFunction[1]{
+                            new boolFunction(() => {return IsAnnoying && gameTime >= 10f + annoyanceTimer;                                                })},
 								20f,
-								true),
-			new Outcome(new voidFunction[2]{new voidFunction(() => {Debug.Log("Outcome 3");}),new voidFunction(() => {Debug.Log("Recurrs");})},
-						new boolFunction[1]{new boolFunction(() => {Debug.Log("O3"); return true;})},
+								false, 
+                                5f),
+			new Outcome(new voidFunction[1]{new voidFunction(() => { IsAnnoying = true; annoyanceTimer = gameTime;                                                             })},
+						new boolFunction[1]{new boolFunction(() => { return BusManager.instance.getSeat("Creep") != -1; })},
 								3f,
 								false,
-								3f), //<< If this final variable is present and not 1f, this outcome repeats itself until the event ends or until its condition becomes false
-			new Outcome(new voidFunction[2]{new voidFunction(() => {Debug.Log("Outcome 4");}),new voidFunction(() => {Debug.Log("FAILURE");})},
+								10f) //<< If this final variable is present and not 1f, this outcome repeats itself until the event ends or until its condition becomes false
+			/*new Outcome(new voidFunction[2]{new voidFunction(() => {Debug.Log("Outcome 4");}),new voidFunction(() => {Debug.Log("FAILURE");})},
 						new boolFunction[1]{new boolFunction(() => {Debug.Log("O4 test"); return false;})},
 								5f,
-								true)
+								true)*/
 		};
 
 		events.Add(new Event(a,t,s,o)); //Add event to thing
 	}
-
 }
