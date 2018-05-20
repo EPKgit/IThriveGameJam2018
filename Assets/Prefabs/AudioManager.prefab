@@ -34,7 +34,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1753909954784318}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenuMusic: {fileID: 8300000, guid: 08c1a03bce182104cafd4b98c628bfe1, type: 3}
   EngineNoise: {fileID: 8300000, guid: e7455278c0726ae488bd0932086dab9f, type: 3}
+  CreditsMusic: {fileID: 8300000, guid: 9d252bffba29c1540a88b25e931a1bf0, type: 3}
   maleSounds:
   - {fileID: 8300000, guid: a8fe1f341e34a614b878bc3e0f1658cd, type: 3}
   - {fileID: 8300000, guid: 396fe6b1da3b150428e4c5ede0e7e77f, type: 3}

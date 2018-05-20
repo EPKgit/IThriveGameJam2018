@@ -10,6 +10,7 @@ public class AudioManager : Singleton<AudioManager>
 
 	public AudioClip MainMenuMusic;
 	public AudioClip EngineNoise;
+	public AudioClip CreditsMusic;
 
 	public AudioClip[] maleSounds;
     public AudioClip[] femaleSounds;
@@ -28,18 +29,32 @@ public class AudioManager : Singleton<AudioManager>
 
 	public void GameStarted()
 	{
-		StartCoroutine(SwitchMusic());
+		StartCoroutine(SwitchMusic1());
 	}
 
-	IEnumerator SwitchMusic()
+	IEnumerator SwitchMusic1()
 	{
 		source.Stop();
 		yield return new WaitForSecondsRealtime(2f);
 		source.clip = EngineNoise;
-		source.Play();
-		//source.pitch = 2;
 		source.volume = svolume;
 		source.loop = true;
+		source.Play();
+	}
+
+	public void GameEnded()
+	{
+		StartCoroutine(SwitchMusic2());
+	}
+
+	IEnumerator SwitchMusic2()
+	{
+		source.Stop();
+		yield return new WaitForSecondsRealtime(2f);
+		source.clip = CreditsMusic;
+		source.volume = mvolume;
+		source.loop = true;
+		source.Play();
 	}
 
 	public void changeMusicVolume(Slider s)
