@@ -68,7 +68,6 @@ public class Character : MonoBehaviour
         }
         AudioManager.instance.playEmotionSound(mood, isFemale);
         BusManager.instance.CreateEmotionBubble(mood, this.gameObject);
-        Debug.Log(mood);
     }
    
    public float dist;
