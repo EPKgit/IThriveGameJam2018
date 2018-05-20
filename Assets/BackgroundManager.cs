@@ -26,12 +26,25 @@ public class BackgroundManager : Singleton<BackgroundManager>
 	public float bg2PercentIncrease;
 	public float bg3PercentIncrease;
 
+	public GameObject loadingScreen;
+
+	private bool loading;
+
 
 	void Start () 
 	{
 		base.EnforceSingleton();
 		bg2index = 0;
 		bg3index = 0;
+		loading = true;
+		StartCoroutine(WaitForLoad());
+	}
+
+	IEnumerator WaitForLoad()
+	{
+		yield return new WaitForSecondsRealtime(2f);
+		loadingScreen.SetActive(false);
+		loading = false;
 	}
 
 	void Update()
@@ -44,12 +57,12 @@ public class BackgroundManager : Singleton<BackgroundManager>
 	
 	public void MoveBackground(float time)
 	{
+		if(loading) return;
 		DoBusBounce(time);
 		bg0.transform.Translate(Time.deltaTime * Vector3.left * speed);
 		bg1.transform.Translate(Time.deltaTime * Vector3.left * speed * bg1PercentIncrease);
 		bg2.transform.Translate(Time.deltaTime * Vector3.left * speed * bg1PercentIncrease * bg2PercentIncrease);
 		bg3.transform.Translate(Time.deltaTime * Vector3.left * speed * bg1PercentIncrease * bg2PercentIncrease * bg3PercentIncrease);
-		Debug.Log(time);
 		SpawnBG2(time);
 		SpawnBG3(time);
 	}
