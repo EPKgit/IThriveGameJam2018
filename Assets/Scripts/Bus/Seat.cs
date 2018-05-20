@@ -58,7 +58,7 @@ public class Seat : MonoBehaviour
 		}
 	}
 
-	void Stand(GameObject g)
+	public void Stand(GameObject g)
 	{
 		if(g == occupant)
 		{

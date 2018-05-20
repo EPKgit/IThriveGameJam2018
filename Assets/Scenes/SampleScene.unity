@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  id: Lady
+  id: Victim
   mood: 0
   location: 0
   speed: 0.8
@@ -1816,7 +1816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f703b98a1cc3714bb4a55c2bc98597a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chars: []
   maxInteractionDistance: 0.8
 --- !u!95 &1005054511
 Animator:
