@@ -45,6 +45,7 @@ public class Seat : MonoBehaviour
 	public void AttemptSit(GameObject g)
 	{
 		if(occupied || Vector2.Distance(g.transform.position, this.transform.position) > maxInteractionDistance) return;
+		Debug.Log("attemptsit2 " + g);
 		Sit(g);
 	}
 

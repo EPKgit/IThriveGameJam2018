@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
 
     public Character lastTalked;
    
-    [HideInInspector]public Vector2 desired;
+    /*[HideInInspector]*/public Vector2 desired;
 
 	IEnumerator Start () 
     { 
@@ -51,12 +51,21 @@ public class Character : MonoBehaviour
             dist = Mathf.Abs(desired.x-rb.position.x);
             if (Mathf.Abs(desired.x-rb.position.x)<=0.55)
             {
-                //Debug.Log("in");
                 moving = false;
-                rb.velocity = Vector2.zero;
-                transform.position = desired;
+                animator.SetFloat("XVelocity", 0);
                 Seat s = BusManager.instance.getSeat(location);
-                s.AttemptSit(this.gameObject);
+                if(s != null)
+                {
+                    rb.velocity = Vector2.zero;
+                    transform.position = desired;
+                    s.AttemptSit(this.gameObject);
+                    if(!GetComponent<Sittable>().sitting)
+                    {
+                        location = -1;
+                        moving = true;
+                        desired.x += (Random.Range(0, 1) == 0) ? -2 : 2;
+                    }
+                }
             }
             else
             {
