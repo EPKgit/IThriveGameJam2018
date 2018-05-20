@@ -1,32 +1,32 @@
 fileFormatVersion: 2
-guid: b0262c3fdb69fdf429313f6284f9491b
+guid: f77cb720742b8cb4fb2cb27e7e93c937
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Victim_Walking_0
-    21300002: Victim_Walking_1
-    21300004: Victim_Walking_2
-    21300006: Victim_Walking_3
-    21300008: Victim_Walking_4
-    21300010: Victim_Walking_5
-    21300012: Victim_Walking_6
-    21300014: Victim_Walking_7
-    21300016: Victim_Walking_8
-    21300018: Victim_Walking_9
-    21300020: Victim_Walking_10
-    21300022: Victim_Walking_11
-    21300024: Victim_Walking_12
-    21300026: Victim_Walking_13
-    21300028: Victim_Walking_14
-    21300030: Victim_Walking_15
-    21300032: Victim_Walking_16
-    21300034: Victim_Walking_17
-    21300036: Victim_Walking_18
-    21300038: Victim_Walking_19
-    21300040: Victim_Walking_20
-    21300042: Victim_Walking_21
-    21300044: Victim_Walking_22
-    21300046: Victim_Walking_23
-    21300048: Victim_Walking_24
+    21300000: Creep_Sitting_0
+    21300002: Creep_Sitting_1
+    21300004: Creep_Sitting_2
+    21300006: Creep_Sitting_3
+    21300008: Creep_Sitting_4
+    21300010: Creep_Sitting_5
+    21300012: Creep_Sitting_6
+    21300014: Creep_Sitting_7
+    21300016: Creep_Sitting_8
+    21300018: Creep_Sitting_9
+    21300020: Creep_Sitting_10
+    21300022: Creep_Sitting_11
+    21300024: Creep_Sitting_12
+    21300026: Creep_Sitting_13
+    21300028: Creep_Sitting_14
+    21300030: Creep_Sitting_15
+    21300032: Creep_Sitting_16
+    21300034: Creep_Sitting_17
+    21300036: Creep_Sitting_18
+    21300038: Creep_Sitting_19
+    21300040: Creep_Sitting_20
+    21300042: Creep_Sitting_21
+    21300044: Creep_Sitting_22
+    21300046: Creep_Sitting_23
+    21300048: Creep_Sitting_24
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -68,7 +68,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Victim_Walking_0
+      name: Creep_Sitting_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,39 +115,39 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a3fa77cae0ff7441b29d6262e4e0c37
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Victim_Walking_1
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 3072
-        width: 512
-        height: 1024
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e7ff4eb0d890654aaa47b9284f6637a
+      spriteID: b57328edfe1c6fc4cabd6355a08ea8d8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_2
+      name: Creep_Sitting_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3072
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a7c32d6747a754d9bbb2213cf1abb0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creep_Sitting_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -155,19 +155,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a510ee6f2a83ef41bb2c33ca191687e
+      spriteID: dad6765d13a77864aa5569dea6f57ca0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_3
+      name: Creep_Sitting_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -175,19 +175,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f30d01e6b71d431409714c395e30906b
+      spriteID: 743464a8b918e7d48808b27a433c681b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_4
+      name: Creep_Sitting_4
       rect:
         serializedVersion: 2
         x: 2048
@@ -195,19 +195,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3161fe95275543d46bf10245d37f2cd1
+      spriteID: 080418e3919c0184eb8a976a356e651c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_5
+      name: Creep_Sitting_5
       rect:
         serializedVersion: 2
         x: 2560
@@ -215,19 +215,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 127a4e14824e54b4aae5b4b569aca278
+      spriteID: 4ab84ca513c8a424b85bc075084b82b2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_6
+      name: Creep_Sitting_6
       rect:
         serializedVersion: 2
         x: 3072
@@ -235,19 +235,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75e1023ef6a9cd84fbcee71321366e5c
+      spriteID: b74cd365f67d63d40a9e24aba98f42a5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_7
+      name: Creep_Sitting_7
       rect:
         serializedVersion: 2
         x: 3584
@@ -255,19 +255,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4eee3dd7aa896ea4c96161a3970f6646
+      spriteID: 13affcf4cd1b7ff4a96847316bc11c86
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_8
+      name: Creep_Sitting_8
       rect:
         serializedVersion: 2
         x: 0
@@ -275,19 +275,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a194294b632a72419609ee206ec443d
+      spriteID: c8f19fb9cdd97994da6b493e851632fe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_9
+      name: Creep_Sitting_9
       rect:
         serializedVersion: 2
         x: 512
@@ -295,19 +295,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f33052d2a089c54db8df1afa8f10611
+      spriteID: 8f21ed8bbc50e7443a2868c74fbd81fb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_10
+      name: Creep_Sitting_10
       rect:
         serializedVersion: 2
         x: 1024
@@ -315,19 +315,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aedc45ad855a114c8a87698d49d75c2
+      spriteID: b48a35c4202d5dd43926bc0197c65abe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_11
+      name: Creep_Sitting_11
       rect:
         serializedVersion: 2
         x: 1536
@@ -335,19 +335,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6da0b54b11f861c4580dcc09448e5849
+      spriteID: d95a516f6a44a91408ddc6d1fde0dc5f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_12
+      name: Creep_Sitting_12
       rect:
         serializedVersion: 2
         x: 2048
@@ -355,19 +355,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a3a8e772c9e5434fa5d61c01258a9f1
+      spriteID: 40b3a9d66b25c0141983ff2556e01ec8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_13
+      name: Creep_Sitting_13
       rect:
         serializedVersion: 2
         x: 2560
@@ -375,19 +375,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f56e76cf4d57cf4eba72b2509126caa
+      spriteID: 3822de4feda4c5a42b59b0e187527e11
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_14
+      name: Creep_Sitting_14
       rect:
         serializedVersion: 2
         x: 3072
@@ -395,19 +395,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ff7349a7c5688c41a9c3a315984f3c4
+      spriteID: 3d682552155cccd47aaac7db1c087d9a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_15
+      name: Creep_Sitting_15
       rect:
         serializedVersion: 2
         x: 3584
@@ -415,19 +415,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3c05c50313b3e54ba64a1d80982e44c
+      spriteID: 21d909c4fc687604fb96de29890d9ccd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_16
+      name: Creep_Sitting_16
       rect:
         serializedVersion: 2
         x: 0
@@ -435,19 +435,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e90eecb399729db40962de648273a95f
+      spriteID: b629fb213b988cc43b16ad75e9241d0a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_17
+      name: Creep_Sitting_17
       rect:
         serializedVersion: 2
         x: 512
@@ -455,19 +455,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8392958043f10ec48b4984fe57c89b74
+      spriteID: 558d0118847638149b0ca8c1e4727f86
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_18
+      name: Creep_Sitting_18
       rect:
         serializedVersion: 2
         x: 1024
@@ -475,19 +475,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a89d596b39ef334ba286c895a82814f
+      spriteID: f8b13d59a1d85df4d90a55b72fcb0c27
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_19
+      name: Creep_Sitting_19
       rect:
         serializedVersion: 2
         x: 1536
@@ -495,19 +495,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c5e0c4993d5ca9499b4cfdaca9194b4
+      spriteID: 046fd743027e321418db77768ba6a8bf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_20
+      name: Creep_Sitting_20
       rect:
         serializedVersion: 2
         x: 2048
@@ -515,19 +515,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a24f0eeeef20f6243aedbc53cbfb18d7
+      spriteID: 8482e3d40e94d47479ed71c189dff84e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_21
+      name: Creep_Sitting_21
       rect:
         serializedVersion: 2
         x: 2560
@@ -535,19 +535,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7af6a19c99dd0d64ab6708432ce1482d
+      spriteID: adb60bd9cdbc0f841b71b79be027683e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_22
+      name: Creep_Sitting_22
       rect:
         serializedVersion: 2
         x: 3072
@@ -555,19 +555,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dc3649903f171f478625d0b77de5560
+      spriteID: 6906472189e582f488e3ddb98a44395a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_23
+      name: Creep_Sitting_23
       rect:
         serializedVersion: 2
         x: 3584
@@ -575,19 +575,19 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bda9c421a7a2b948a853fd1a09e9313
+      spriteID: 6e12b400120b6394ea4222eecd535977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Victim_Walking_24
+      name: Creep_Sitting_24
       rect:
         serializedVersion: 2
         x: 0
@@ -595,13 +595,13 @@ TextureImporter:
         width: 512
         height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 40, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5565a1bc84482dd46b2c0caa5dbf0b86
+      spriteID: d3ce731f0684725449e53630247192bc
       vertices: []
       indices: 
       edges: []
@@ -609,7 +609,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 921c464738a458a4d8e5cec208dc0d9e
+    spriteID: 56581cf6f317f134baaa3280a3d34ab9
     vertices: []
     indices: 
     edges: []

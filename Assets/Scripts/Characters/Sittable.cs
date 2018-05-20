@@ -32,7 +32,7 @@ public class Sittable : MonoBehaviour
 		if(GetComponent<PlayerMovement>() != null)
 		{
 			coolingDown = true;
-			PlayerMovement.instance.CanMove = false;
+			if(PlayerMovement.instance != null) PlayerMovement.instance.CanMove = false;
 			StartCoroutine(SitCooldown());
 		}
 		sitting = true;

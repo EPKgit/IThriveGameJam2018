@@ -6,73 +6,118 @@ public class Character : MonoBehaviour {
     public int mood;
     public string id;
     public int location;
-    public int speed;
+    public float speed;
     public BusManager busManager;
     private Rigidbody2D rb;
     private Animator animator;
+    public SpriteRenderer sprite;
     private bool sliding;
+    public bool coolingDown;
+    public char lastTalked;
+    public bool talking;
+   
     public Vector2 desired;
-
+    public Sittable sit;
 	// Use this for initialization
-	IEnumerator Start () {
+	IEnumerator Start () { 
         yield return new WaitUntil( () => BusManager.instance != null);
         busManager = BusManager.instance;
-        desired = busManager.seatLocation(2);
+        talking = false;
+        sprite = GetComponent<SpriteRenderer>();
         mood = 0;
+        coolingDown = false;
+        sit = GetComponent<Sittable>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sliding = false;
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        if (sliding == true) {
-            slide(desired);
-        }
-		
-	}
+        
+        //moveSeat(2);
 
-    int getMood () {
+    }
+
+   
+
+    // Update is called once per frame
+    void FixedUpdate () {
+      //  Debug.Log(rb.velocity);
+        //Debug.Log(Mathf.Abs(desired.x - rb.position.x));
+        if (sliding == true) {
+            if (Mathf.Abs(desired.x-rb.position.x)<=0.2)
+            {
+          //      Debug.Log("in");
+                sliding = false;
+                rb.velocity = Vector2.zero;
+                rb.position = desired;
+                Seat s = busManager.getSeat(location);
+                s.AttemptSit(this.gameObject);
+            }
+            else
+            {
+                if (desired.x > rb.position.x)
+                {
+                    rb.velocity = new Vector2(1f * speed, 0);
+                    animator.SetFloat("XVelocity", 1f);
+                    sprite.flipX = false;
+
+                }
+                if (desired.x < rb.position.x)
+                {
+                    
+                    rb.velocity = new Vector2(-1f * speed, 0);
+                    animator.SetFloat("XVelocity", -1f);
+                    sprite.flipX = true;
+
+
+                }
+            }
+        }
+    }
+
+    public int getMood () {
         return mood;
     }
-
-    int getLocation()
+   
+    public int getLocation()
     {
-        return location; 
+        return busManager.getSeat(id); 
     }
 
-    
+    IEnumerator CantSpeak()
+    {
+        yield return new WaitForSeconds(1f);
+        coolingDown = false;
+    }
 
-    void moveSeat(int seat) {
+    public void talk(char id) {
+
+        if (lastTalked == id)
+        {
+            coolingDown = true;
+
+            StartCoroutine(CantSpeak());
+        }
+        else
+        {
+
+
+            lastTalked = id;
+        }
+    }
+
+
+    public void moveSeat(int seat) {
+     //   Debug.Log("in");
         if (location != seat) {
-            while (rb.position!=desired)
-            {
+            //Debug.Log("location is not seat");
+            desired = busManager.seatLocation(seat);
+            //Debug.Log(desired);
+                //Debug.Log("position != desired");
                 if (!busManager.seatOccupied(seat))
                 {
                     location = seat;
-                    desired= busManager.seatLocation(seat);
+                //Debug.Log(location); 
                     sliding =true;
-                
-                }
+                }    
             }
-            sliding = false;
-            
-
-        }
-    }
-    void slide(Vector2 seat)
-    {
-        
-       
-            if (seat.x > rb.position.x)
-            {
-                rb.velocity=(Vector2.right * speed * 0);
             }
-        if (seat.x < rb.position.x)
-        {
-                rb.velocity = (Vector2.left * speed * 0);
-            }
-        
-
-    }
 }

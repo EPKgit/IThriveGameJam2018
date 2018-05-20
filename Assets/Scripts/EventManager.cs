@@ -51,6 +51,7 @@ public class EventManager : Singleton<EventManager>
 			removeEvents.Clear();
 			
 			BackgroundManager.instance.MoveBackground(gameTime);
+			
 			yield return new WaitForEndOfFrame();
 		}
 	}
