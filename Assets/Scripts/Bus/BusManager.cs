@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BusManager : Singleton<BusManager>
 {
+	public GameObject[] emotionBubbles;
 	public GameObject[] gseats;
 	[HideInInspector]public int size;
 
@@ -59,12 +60,16 @@ public class BusManager : Singleton<BusManager>
 
 	public void CreateEmotionBubble(int mood, GameObject g)
 	{
-
+		GameObject temp = Instantiate(emotionBubbles[mood + 2]);
+		temp.transform.position = new Vector3(0, 2, 0);
+		temp.transform.SetParent(g.transform, false);
+		StartCoroutine(DeleteBubble(temp));
 	}
 
 	private IEnumerator DeleteBubble(GameObject b)
 	{
-		yield return null;
+		yield return new WaitForSecondsRealtime(2f);
+		Destroy(b);
 	}
 	
 }

@@ -44,7 +44,6 @@ public class AudioManager : Singleton<AudioManager>
 
 	public void changeMusicVolume(Slider s)
 	{
-		Debug.Log(mvolume);
 		mvolume = s.value;
 		source.volume = mvolume;
 	}

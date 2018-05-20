@@ -2795,6 +2795,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9062a599622fab42b973191eb03253c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emotionBubbles:
+  - {fileID: 1868907691642282, guid: 89427523544ac3940a09a03684e50afa, type: 2}
+  - {fileID: 1384809185113564, guid: f402e04be79b1714f8fe52e36308e674, type: 2}
+  - {fileID: 1291732109262178, guid: 2044d4c5ec0e7d54a80b0bc8f8623fc4, type: 2}
+  - {fileID: 1030204430499066, guid: bfa2b29661cbddd499bdcec066e4832a, type: 2}
+  - {fileID: 1267951267744472, guid: 7037311567d408f4eb260eaeb27cccf1, type: 2}
   gseats:
   - {fileID: 1161663389}
   - {fileID: 440255882}
