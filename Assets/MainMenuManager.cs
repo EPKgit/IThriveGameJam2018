@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour 
 {
-	public AudioSource mainMenuMusic;
 
 	void Start () 
 	{
-		mainMenuMusic.Play();
 	}
 	
 	void Update ()
