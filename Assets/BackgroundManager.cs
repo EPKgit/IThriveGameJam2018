@@ -19,9 +19,12 @@ public class BackgroundManager : Singleton<BackgroundManager>
 	public float bg2PercentIncrease;
 	public float bg3PercentIncrease;
 
+	public LayerMask layer;
+
 	void Start () 
 	{
 		base.EnforceSingleton();
+		Physics2D.IgnoreLayerCollision(layer, layer, true);
 	}
 	
 	public void MoveBackground(float time)
