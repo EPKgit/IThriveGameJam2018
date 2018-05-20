@@ -2,73 +2,77 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
-    public int mood;
+public class Character : MonoBehaviour 
+{
+    public bool isPlayer;
     public string id;
-    public int location;
+    [HideInInspector]public int mood;
+    [HideInInspector]public int location;
     public float speed;
-    public BusManager busManager;
+    public int startingSeat;
+
     private Rigidbody2D rb;
     private Animator animator;
-    public SpriteRenderer sprite;
-    private bool sliding;
-    public bool coolingDown;
-    public char lastTalked;
-    public bool talking;
+    [HideInInspector]public SpriteRenderer sprite;
+    [SerializeField]private bool moving;
+    [SerializeField]private bool coolingDown;
+
+    public Character lastTalked;
    
-    public Vector2 desired;
-    public Sittable sit;
-	// Use this for initialization
-	IEnumerator Start () { 
-        yield return new WaitUntil( () => BusManager.instance != null);
-        busManager = BusManager.instance;
-        talking = false;
-        sprite = GetComponent<SpriteRenderer>();
+    /*[HideInInspector]*/public Vector2 desired;
+
+	IEnumerator Start () 
+    { 
+        yield return new WaitUntil( () => BusManager.instance != null && PlayerInteraction.instance != null);
+
+        PlayerInteraction.instance.chars.Add(this);
+        
         mood = 0;
-        coolingDown = false;
-        sit = GetComponent<Sittable>();
+        
+        sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        sliding = false;
-        
-        //moveSeat(2);
 
+        coolingDown = false;
+        moving = false;
+        
+        location = -1;//startingSeat;
+        moveSeat(startingSeat);
     }
 
    
-
-    // Update is called once per frame
+   public float dist;
     void FixedUpdate () {
-      //  Debug.Log(rb.velocity);
+        if(isPlayer) return;
+        //Debug.Log(rb.velocity);
         //Debug.Log(Mathf.Abs(desired.x - rb.position.x));
-        if (sliding == true) {
-            if (Mathf.Abs(desired.x-rb.position.x)<=0.2)
+        if (moving) 
+        {
+            dist = Mathf.Abs(desired.x-rb.position.x);
+            if (Mathf.Abs(desired.x-rb.position.x)<=0.55)
             {
-          //      Debug.Log("in");
-                sliding = false;
-                rb.velocity = Vector2.zero;
-                rb.position = desired;
-                Seat s = busManager.getSeat(location);
-                s.AttemptSit(this.gameObject);
+                moving = false;
+                animator.SetFloat("XVelocity", 0);
+                Seat s = BusManager.instance.getSeat(location);
+                if(s != null)
+                {
+                    rb.velocity = Vector2.zero;
+                    transform.position = desired;
+                    s.AttemptSit(this.gameObject);
+                    if(!GetComponent<Sittable>().sitting)
+                    {
+                        location = -1;
+                        moving = true;
+                        desired.x += (Random.Range(0, 1) == 0) ? -2 : 2;
+                    }
+                }
             }
             else
             {
-                if (desired.x > rb.position.x)
-                {
-                    rb.velocity = new Vector2(1f * speed, 0);
-                    animator.SetFloat("XVelocity", 1f);
-                    sprite.flipX = false;
-
-                }
-                if (desired.x < rb.position.x)
-                {
-                    
-                    rb.velocity = new Vector2(-1f * speed, 0);
-                    animator.SetFloat("XVelocity", -1f);
-                    sprite.flipX = true;
-
-
-                }
+                float xVel = (desired.x > transform.position.x) ? 1 : -1;
+                rb.velocity = new Vector2(xVel * speed, 0);
+                animator.SetFloat("XVelocity", xVel);
+                sprite.flipX = (xVel == -1);
             }
         }
     }
@@ -79,45 +83,33 @@ public class Character : MonoBehaviour {
    
     public int getLocation()
     {
-        return busManager.getSeat(id); 
+        return BusManager.instance.getSeat(id); 
     }
 
-    IEnumerator CantSpeak()
+    
+    public void Talk(Character c) 
     {
-        yield return new WaitForSeconds(1f);
+        if(coolingDown) { Debug.Log("FAILED TALK"); return; }
+        StartCoroutine(StartCooldown(0));
+        lastTalked = c;
+    }
+
+    IEnumerator StartCooldown(float f)
+    {
+        coolingDown = true;
+        if(f == 0) f = 1f;
+        yield return new WaitForSeconds(f);
         coolingDown = false;
     }
 
-    public void talk(char id) {
 
-        if (lastTalked == id)
+    public void moveSeat(int seat) 
+    {
+        if (location != seat) 
         {
-            coolingDown = true;
-
-            StartCoroutine(CantSpeak());
-        }
-        else
-        {
-
-
-            lastTalked = id;
+            moving = true;
+            desired = BusManager.instance.seatLocation(seat);
+            location = seat;
         }
     }
-
-
-    public void moveSeat(int seat) {
-     //   Debug.Log("in");
-        if (location != seat) {
-            //Debug.Log("location is not seat");
-            desired = busManager.seatLocation(seat);
-            //Debug.Log(desired);
-                //Debug.Log("position != desired");
-                if (!busManager.seatOccupied(seat))
-                {
-                    location = seat;
-                //Debug.Log(location); 
-                    sliding =true;
-                }    
-            }
-            }
 }

@@ -6,15 +6,21 @@ public class Sittable : MonoBehaviour
 {
 
 	public bool sitting;
+	public float sitHeight;
 
 	private Animator animator;
+	private BoxCollider2D col;
 	private bool coolingDown;
+	private float normalHeight;
 
 	void Start()
 	{
 		sitting = false;
 		coolingDown = false;
 		animator = GetComponent<Animator>();
+		col = GetComponent<BoxCollider2D>();
+
+		normalHeight = col.size.y;
 	}
 
 	
@@ -36,6 +42,7 @@ public class Sittable : MonoBehaviour
 			StartCoroutine(SitCooldown());
 		}
 		sitting = true;
+		col.size = new Vector2(col.size.x, sitHeight);
 		Vector3 pos = gameObject.transform.position;
 		this.gameObject.transform.position = new Vector3(s.transform.position.x, pos.y, pos.z);
 		animator.SetBool("IsSitting", true);
@@ -48,6 +55,7 @@ public class Sittable : MonoBehaviour
 
 		if(coolingDown) return false;
 		sitting = false;
+		col.size = new Vector2(col.size.x, normalHeight);
 		animator.SetBool("IsSitting", false);
 		return true;
 	}
