@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class PlayerInteraction : Singleton<PlayerInteraction>
 {
 
+	public List<Character> chars;
+
 	public delegate void InteractionEvent(GameObject g);
 	public InteractionEvent sit;
 	public InteractionEvent move;
@@ -17,7 +19,8 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 		base.EnforceSingleton();
 		sit = nocrash;
 		move = nocrash;
-		talk = nocrash;
+		talk = AttemptTalk;
+		chars = new List<Character>();
 	}
 	
 	void Update () 
@@ -27,12 +30,26 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 		if(Input.GetAxis("Horizontal") != 0)
 			move(this.gameObject);
 		if(Input.GetKeyDown(KeyCode.Space))
-			for(int x = 0; x < BusManager.instance.size; ++x)
-				Debug.Log(x + " " + BusManager.instance.seatOccupied(x));
+			talk(this.gameObject);
 	}
 
 	void nocrash(GameObject g)
 	{
 
+	}
+
+	void AttemptTalk(GameObject g)
+	{
+		float mindist = float.MaxValue;
+		Character min;
+		foreach(Character c in chars)
+		{
+			if(Vector2.Distance(c.gameObject.transform.position, transform.position) < mindist)
+			{
+				mindist = Vector2.Distance(c.gameObject.transform.position, transform.position);
+				min = c;
+			}
+		}
+		//min.Talk(GetComponent<Character>());
 	}
 }

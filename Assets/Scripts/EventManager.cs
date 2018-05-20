@@ -38,7 +38,7 @@ public class EventManager : Singleton<EventManager>
 					activeEvents.Remove(e);
 			}
 			
-			BackgroundManager.instance.MoveBackground(Time.deltaTime);
+			BackgroundManager.instance.MoveBackground(gameTime);
 			yield return null;
 		}
 	}
