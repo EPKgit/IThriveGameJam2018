@@ -44,17 +44,18 @@ public class BackgroundManager : Singleton<BackgroundManager>
 	IEnumerator WaitForLoad()
 	{
 		yield return new WaitForSecondsRealtime(2f);
+		Time.timeScale = 1.2f;
 		loadingScreen.SetActive(false);
 		loading = false;
 	}
 
-	void Update()
+	/*void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.F))
 			Time.timeScale = 20;
 		if(Input.GetKeyUp(KeyCode.F))
 			Time.timeScale = 1;
-	}
+	}*/
 	
 	public void MoveBackground(float time)
 	{

@@ -287,13 +287,27 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Get Rekt - Sarcastic Programming\nDrpd - Legally not a doctor\nPUNisher
-    - Programming? Design Pun Opunions\nPlug me in - NO Organ Trail\nIt's Charging
-    - Uh Art (and losing charger)\nBeardless - Not Jorge, Design, Sand, really enjoys
-    videogames\nCroissant - Beetzzzzzzzzz\n                                                                                                        zzzzzzzzzzzzz\n
-    \                                                                                                                                                                              zzzzzzzzzzzzz\nTina
-    Feng - Art, Ittai\nKyle's Friend - Empathy\n\nAnd Special Thanks to Git for being
-    a wonderful program /s\n\nPress Enter to Quit"
+  m_Text: 'Christian Gramling : Design and Programming
+
+    Kyle Kissler : Design and Programming
+
+    Samantha Shieh : Art
+
+    Mayan Shoshani : Programming
+
+    Tina Feng : Art
+
+    Eric Kim : Programming
+
+    Kristen Campbell : Audio
+
+    Jorge Quiros : Design and Audio
+
+
+    And Special Thanks to Git for being a wonderful program /s
+
+
+    Press Enter to Quit'
 --- !u!222 &1104494168
 CanvasRenderer:
   m_ObjectHideFlags: 0

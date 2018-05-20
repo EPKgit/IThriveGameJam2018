@@ -47,6 +47,7 @@ public class Sittable : MonoBehaviour
 		this.gameObject.transform.position = new Vector3(s.transform.position.x, pos.y, pos.z);
 		animator.SetBool("IsSitting", true);
 		animator.SetFloat("XVelocity", 0);
+		GetComponent<SpriteRenderer>().sortingOrder = 20;
 		return true;
 	}
 
@@ -57,6 +58,7 @@ public class Sittable : MonoBehaviour
 		sitting = false;
 		col.size = new Vector2(col.size.x, normalHeight);
 		animator.SetBool("IsSitting", false);
+		GetComponent<SpriteRenderer>().sortingOrder = 30;
 		return true;
 	}
 

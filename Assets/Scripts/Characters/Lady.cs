@@ -36,6 +36,9 @@ public class Lady : Character
             new Outcome(new voidFunction[1]{new voidFunction(() => {
                 c.setMood(-1);
                 Homeless.stopStealing(PlayerInteraction.instance.chars["Homeless"]);
+                c.moveSeat(7);
+                PlayerInteraction.instance.chars["Child"].moveSeat(8);
+                //PlayerInteraction.instance.chars["Child"].setMood(0);
             })},	
             new boolFunction[1]{new boolFunction(() => { return c.lastTalked == PlayerInteraction.instance.chars["Player"] && Mathf.Abs(EventManager.instance.gameTime - c.timeTalked) < 5.0f;})}, 
                     20f,													
