@@ -77,7 +77,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.081192195}
+  m_Offset: {x: 0, y: 0.1468808}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0.15625, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -88,7 +88,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 3.8376155}
+  m_Size: {x: 2, y: 3.7062383}
   m_EdgeRadius: 0
 --- !u!95 &95035669682709254
 Animator:
@@ -119,16 +119,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573949c0c0c1f5a4ea7a37abb6f82de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFemale: 0
   isPlayer: 0
   id: Victim
   mood: 0
   location: 0
   speed: 1
-  startingSeat: 0
+  startingSeat: 2
   sprite: {fileID: 0}
   moving: 0
   coolingDown: 0
   lastTalked: {fileID: 0}
+  timeTalked: 0
   desired: {x: 0, y: 0}
   dist: 0
   sampleVariable: 0
