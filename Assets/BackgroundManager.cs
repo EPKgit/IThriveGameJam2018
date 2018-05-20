@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BackgroundManager : Singleton<BackgroundManager>
 {
@@ -65,6 +66,14 @@ public class BackgroundManager : Singleton<BackgroundManager>
 		bg3.transform.Translate(Time.deltaTime * Vector3.left * speed * bg1PercentIncrease * bg2PercentIncrease * bg3PercentIncrease);
 		SpawnBG2(time);
 		SpawnBG3(time);
+		if(time >= 245)
+			EndGame();
+	}
+
+	void EndGame()
+	{
+		AudioManager.instance.GameEnded();
+		SceneManager.LoadScene("Credits");
 	}
 
 	void SpawnBG3(float time)
