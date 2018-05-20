@@ -102,17 +102,12 @@ public class Character : MonoBehaviour
         coolingDown = false;
     }
 
-    public bool isSitting()
-    {
-        return BusManager.instance.getSeat(id) != -1;
-    }
-
 
     public void moveSeat(int seat) 
     {
         if (location != seat) 
         {
-            if (!isSitting())
+            if (location != -1)
                 BusManager.instance.getSeat(BusManager.instance.getSeat(id)).Stand(gameObject);
             moving = true;
             if (seat != -1 && BusManager.instance.getSeat(seat).occupied)
