@@ -46,6 +46,9 @@ public class Character : MonoBehaviour
         mood = newMood;
         switch (mood)
         {
+            case -3:
+                mood = -2;
+                break;
             case -2:
                 break;
             case -1:
@@ -56,9 +59,13 @@ public class Character : MonoBehaviour
                 break;
             case 2:
                 break;
+            case 3:
+                mood = 3;
+                break;
             default:
                 break;
         }
+        Debug.Log(mood);
     }
    
    public float dist;

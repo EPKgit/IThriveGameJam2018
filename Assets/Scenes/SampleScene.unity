@@ -155,6 +155,7 @@ MonoBehaviour:
   moving: 0
   coolingDown: 0
   lastTalked: {fileID: 0}
+  timeTalked: 0
   desired: {x: 0, y: 0}
   dist: 0
 --- !u!114 &1012575
@@ -1278,6 +1279,7 @@ MonoBehaviour:
   moving: 0
   coolingDown: 0
   lastTalked: {fileID: 0}
+  timeTalked: 0
   desired: {x: 0, y: 0}
   dist: 0
 --- !u!114 &610320894
@@ -1953,6 +1955,7 @@ MonoBehaviour:
   moving: 0
   coolingDown: 0
   lastTalked: {fileID: 0}
+  timeTalked: 0
   desired: {x: 0, y: 0}
   dist: 0
 --- !u!1 &1024169976
@@ -2071,6 +2074,7 @@ MonoBehaviour:
   moving: 0
   coolingDown: 0
   lastTalked: {fileID: 0}
+  timeTalked: 0
   desired: {x: 0, y: 0}
   dist: 0
 --- !u!114 &1054804175
@@ -2813,7 +2817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1449636814
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3746,6 +3750,7 @@ MonoBehaviour:
   moving: 0
   coolingDown: 0
   lastTalked: {fileID: 0}
+  timeTalked: 0
   desired: {x: 0, y: 0}
   dist: 0
 --- !u!114 &1839196455

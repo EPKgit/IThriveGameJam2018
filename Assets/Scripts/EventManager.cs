@@ -60,7 +60,8 @@ public class EventManager : Singleton<EventManager>
 
 	private void populateEvents()
 	{
-		EXAMPLE_EVENT();
+		//EXAMPLE_EVENT();
+		events.Add(Creep.creepRoam(characters["Creep"]));
 		return;
 	}
 
