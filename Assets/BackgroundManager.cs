@@ -29,7 +29,7 @@ public class BackgroundManager : Singleton<BackgroundManager>
 
 	public GameObject loadingScreen;
 
-	[SerializeField]private bool loading;
+	[SerializeField]public bool loading;
 
 
 	void Start () 
@@ -43,19 +43,20 @@ public class BackgroundManager : Singleton<BackgroundManager>
 
 	IEnumerator WaitForLoad()
 	{
-		yield return new WaitForSecondsRealtime(2f);
+		//yield return new WaitForSecondsRealtime(5f);
+		yield return new WaitUntil( () => Input.GetKeyDown(KeyCode.Return));
 		Time.timeScale = 1.2f;
 		loadingScreen.SetActive(false);
 		loading = false;
 	}
 
-	/*void Update()
+	void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.F))
 			Time.timeScale = 20;
 		if(Input.GetKeyUp(KeyCode.F))
 			Time.timeScale = 1;
-	}*/
+	}
 	
 	public void MoveBackground(float time)
 	{

@@ -35,7 +35,7 @@ public class AudioManager : Singleton<AudioManager>
 	IEnumerator SwitchMusic1()
 	{
 		source.Stop();
-		yield return new WaitForSecondsRealtime(2f);
+		yield return new WaitUntil( () => BackgroundManager.instance != null && BackgroundManager.instance.loading == false);
 		source.clip = EngineNoise;
 		source.volume = svolume;
 		source.loop = true;
