@@ -28,7 +28,7 @@ public class Lady : Character
                 c.setMood(0);
                 PlayerInteraction.instance.chars["Child"].setMood(0);
             })},	
-            new boolFunction[1]{new boolFunction(() => { return true;})}, 
+            new boolFunction[1]{c.isSitting}, 
                     40f,													
                     true),
 

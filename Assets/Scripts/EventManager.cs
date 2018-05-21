@@ -15,7 +15,7 @@ public class EventManager : Singleton<EventManager>
 
 	IEnumerator Start () 
 	{
-		yield return new WaitUntil(() => PlayerInteraction.instance != null && PlayerInteraction.instance.chars.Count >= 5);
+		yield return new WaitUntil(() => PlayerInteraction.instance != null && PlayerInteraction.instance.chars.Count >= 6);
 		
 		base.EnforceSingleton();
 		events = new List<Event>();
@@ -76,8 +76,7 @@ public class EventManager : Singleton<EventManager>
 			() => {return;}, //Actions when triggered
 			() => {BusManager.instance.getSeat(BusManager.instance.getSeat(characters["Creep"].id)).Stand(characters["Creep"].gameObject);}
 			};
-		boolFunction[] t = {
-			() => {characters["Creep"].setMood(0);return characters["Creep"].isSitting();}//Trigger conditions // probably not standing
+		boolFunction[] t = {characters["Creep"].isSitting
 			};
 
 		float s = 1f;//When to start the whole event
