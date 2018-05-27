@@ -1186,6 +1186,51 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114732618320967590, guid: 3c6198537645efd4a9dcd6b801ce81e6,
+        type: 2}
+      propertyPath: maleSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a0f5067c567d0a41909d0887f3f1411, type: 3}
+    - target: {fileID: 114732618320967590, guid: 3c6198537645efd4a9dcd6b801ce81e6,
+        type: 2}
+      propertyPath: maleSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 94aa4f715c0c0384aa4feb9b5492152e, type: 3}
+    - target: {fileID: 114732618320967590, guid: 3c6198537645efd4a9dcd6b801ce81e6,
+        type: 2}
+      propertyPath: maleSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e088849b34947064283bedb66e9268a4, type: 3}
+    - target: {fileID: 114732618320967590, guid: 3c6198537645efd4a9dcd6b801ce81e6,
+        type: 2}
+      propertyPath: maleSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: bfb98fb6caf9bce4bb972d625d038599, type: 3}
+    - target: {fileID: 114732618320967590, guid: 3c6198537645efd4a9dcd6b801ce81e6,
+        type: 2}
+      propertyPath: femaleSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d45300b9dcec49a4a89e958126e14592, type: 3}
+    - target: {fileID: 114732618320967590, guid: 3c6198537645efd4a9dcd6b801ce81e6,
+        type: 2}
+      propertyPath: femaleSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9dd9e5144b9348c438edcd19b012f86d, type: 3}
+    - target: {fileID: 114732618320967590, guid: 3c6198537645efd4a9dcd6b801ce81e6,
+        type: 2}
+      propertyPath: femaleSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 724e62a925813e6409d83f9bd179bf2e, type: 3}
+    - target: {fileID: 114732618320967590, guid: 3c6198537645efd4a9dcd6b801ce81e6,
+        type: 2}
+      propertyPath: femaleSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: f508d4b35053fa043a8df4fd34c065fe, type: 3}
+    - target: {fileID: 114732618320967590, guid: 3c6198537645efd4a9dcd6b801ce81e6,
+        type: 2}
+      propertyPath: femaleSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7446bd174e8bae47bd97abd8dc438b1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c6198537645efd4a9dcd6b801ce81e6, type: 2}
   m_IsPrefabParent: 0

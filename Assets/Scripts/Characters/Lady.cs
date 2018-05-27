@@ -12,7 +12,12 @@ public class Lady : Character
     public static Event childTantrum(Character c)
 	{
 		voidFunction[] a = {
-			() => {c.setMood(-1); if (c.isSitting()) BusManager.instance.getSeat(BusManager.instance.getSeat(c.id)).Stand(c.gameObject); c.desired = new Vector2(-4f,0f); c.moving = true; c.location = -1;}
+			() => {
+                c.setMood(-1); 
+                if (c.isSitting()) 
+                    BusManager.instance.getSeat(BusManager.instance.getSeat(c.id)).Stand(c.gameObject); 
+                    c.desired = new Vector2(-4f,0f); c.moving = true; c.location = -1;
+                }
 			};
 		boolFunction[] t = {
 			() => {return consoleChild;}
